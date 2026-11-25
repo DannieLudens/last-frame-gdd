@@ -28,6 +28,15 @@ La tinta es escasa: se conserva de un set a otro y se recarga con tinteros. Elim
 
 ## Ciclo principal (core loop)
 
+El ciclo que se repite en cada set:
+
+1. **Observar:** leer patrullas, cámaras, luces y ruido del suelo desde la sombra.
+1. **Planear:** elegir ruta, distraer con ruido o con un disparo, o preparar un ataque por la espalda.
+1. **Moverse:** avanzar agachada o correr entre zonas oscuras, evitando reflectores y virutas que hacen ruido.
+1. **Reaccionar:** si la ven o la golpean, huir, alejar a los enemigos de su rastro, disparar tinta o cambiar al corrector.
+1. **Recolectar:** tomar la cinta del set, tinteros (munición) y corazones para recuperar vida.
+1. **Avanzar:** cruzar la puerta hacia el siguiente set.
+
 ```mermaid
 flowchart LR
   A[Observar desde la sombra] --> B[Planear ruta o distracción]
@@ -40,15 +49,6 @@ flowchart LR
   G -- No --> A
   G -- Sí --> H[Siguiente set]
 ```
-
-El ciclo que se repite en cada set:
-
-1. **Observar:** leer patrullas, cámaras, luces y ruido del suelo desde la sombra.
-1. **Planear:** elegir ruta, distraer con ruido o con un disparo, o preparar un ataque por la espalda.
-1. **Moverse:** avanzar agachada o correr entre zonas oscuras, evitando reflectores y virutas que hacen ruido.
-1. **Reaccionar:** si la ven o la golpean, huir, alejar a los enemigos de su rastro, disparar tinta o cambiar al corrector.
-1. **Recolectar:** tomar la cinta del set, tinteros (munición) y corazones para recuperar vida.
-1. **Avanzar:** cruzar la puerta hacia el siguiente set.
 
 ## Mecánicas principales
 

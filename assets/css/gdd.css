@@ -569,5 +569,73 @@ a.portada__jugar:focus-visible { outline: 2px dashed var(--lf-marfil); outline-o
 
 /* Logo del juego en lugar del titulo de texto (placeholder hasta el logo del equipo) */
 .portada__titulo--logo { margin: 0.2rem auto 0.6rem; line-height: 0; }
-.portada__titulo--logo img { display: block; width: min(460px, 72vw); height: auto; margin: 0 auto; }
+.portada__titulo--logo img {
+  display: block; width: min(480px, 74vw); height: auto; margin: 0 auto;
+  filter: drop-shadow(0 0 1.5px var(--lf-marfil)) drop-shadow(0 6px 18px rgb(0 0 0 / .45)); /* separa la pelicula oscura del fondo */
+}
 .idiomas[hidden] { display: none; }
+
+/* Valor con boton de copiar (icono de dos cuadros) */
+.copiable { display: flex; align-items: center; gap: 0.3rem; margin: 0.1rem 0 0.2rem; }
+.copiar {
+  display: inline-grid; place-items: center; width: 1.7rem; height: 1.7rem; padding: 0;
+  border: 1px solid var(--color-linea); border-radius: 0.4rem; background: transparent;
+  color: var(--color-texto-2); cursor: pointer; transition: color .15s, border-color .15s, background .15s;
+}
+.copiar svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.copiar:hover { color: var(--color-acento); border-color: var(--color-acento); }
+.copiar:focus-visible { outline: 2px solid var(--color-acento); outline-offset: 2px; }
+.copiar.copiado { color: var(--color-sobre-acento); background: var(--color-acento); border-color: var(--color-acento); }
+
+/* Galerias: la imagen completa, sin recortar (bocetos y personajes son altos) */
+.galeria img { object-fit: contain; background: color-mix(in srgb, var(--lf-marfil) 92%, transparent); padding: 0.4rem; }
+
+/* ---------- Fondo: patron suave con los props del estudio ---------- */
+body { position: relative; isolation: isolate; }
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: url('../img/ui/patron-estudio.svg') 0 0 / 420px 420px repeat;
+  opacity: .035; /* casi invisible: textura, no distraccion */
+}
+
+/* ---------- Indice plegable (escritorio): riel con numeros que se abre al pasar el mouse ---------- */
+@media (min-width: 961px) {
+  .layout { grid-template-columns: 72px minmax(0, 1fr); max-width: 1240px; }
+  .indice {
+    width: 72px; z-index: 18; overflow-x: hidden;
+    padding: var(--space-3) 0.5rem; background: var(--color-dominante);
+    transition: width .2s ease, box-shadow .2s ease;
+  }
+  .indice__titulo, .indice__pendientes { opacity: 0; transition: opacity .15s; white-space: nowrap; }
+  .indice a { grid-template-columns: 2.2rem 1fr auto; white-space: nowrap; padding-left: 0.85rem; }
+  .indice a > span:not(.indice__num) { opacity: 0; transition: opacity .15s; }
+  .indice:hover, .indice:focus-within {
+    width: 300px; overflow-y: auto;
+    box-shadow: 24px 0 48px color-mix(in srgb, black 45%, transparent);
+  }
+  .indice:hover .indice__titulo, .indice:focus-within .indice__titulo,
+  .indice:hover .indice__pendientes, .indice:focus-within .indice__pendientes,
+  .indice:hover a > span, .indice:focus-within a > span { opacity: 1; }
+  .indice:hover a, .indice:focus-within a { white-space: normal; }
+  /* pista visual del riel: una linea de puntos como la tira de pelicula */
+  .indice::after {
+    content: ""; position: absolute; top: var(--space-3); bottom: var(--space-3); right: 6px; width: 4px;
+    background: radial-gradient(circle, var(--color-linea) 1.5px, transparent 2px) 0 0 / 4px 12px repeat-y;
+  }
+  .indice:hover::after, .indice:focus-within::after { opacity: 0; }
+}
+@media (min-width: 961px) and (prefers-reduced-motion: reduce) {
+  .indice, .indice * { transition: none; }
+}
+
+/* ---------- Portada: mas legible ---------- */
+.portada__pitch {
+  max-width: 50ch; color: var(--lf-marfil); text-wrap: pretty;
+  text-shadow: 0 1px 2px color-mix(in srgb, black 70%, transparent);
+}
+.portada__meta {
+  flex-direction: column; align-items: center; gap: 0.3rem; max-width: 62ch;
+  font-size: 0.95rem; color: color-mix(in srgb, var(--lf-marfil) 72%, transparent);
+  text-wrap: balance;
+}
+.portada__meta strong { color: var(--lf-marfil); }

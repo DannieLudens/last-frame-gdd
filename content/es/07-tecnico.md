@@ -71,7 +71,7 @@ Volumen de música, volumen de efectos, pantalla completa o ventana, y vista de 
 
 ## Motor
 
-Unity 6. Es el motor del bootcamp y el que el equipo conoce; tiene NavMesh para la IA de los enemigos, el Input System para los controles y exporta a WebGL para publicar en itch.io. Se apoya en paquetes de la Asset Store: Senses 3 (percepción de enemigos), Flat Kit (sombreado toon) y un shader de contorno tipo caricatura (nombre por confirmar con Sebas).
+Unity 6. Es el motor del bootcamp y el que el equipo conoce; tiene NavMesh para la IA de los enemigos, el Input System para los controles y exporta a WebGL para publicar en itch.io. Se apoya en paquetes de la Asset Store: Senses 3 (percepción de enemigos), Flat Kit (sombreado toon y contorno tipo caricatura).
 
 ## Controles
 

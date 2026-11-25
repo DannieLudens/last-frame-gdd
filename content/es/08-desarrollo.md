@@ -74,12 +74,19 @@ classDiagram
 
 El GameManager es el único singleton. Las demás clases le avisan por eventos y él cambia el estado del juego.
 
-## Principios aplicados
+## Principios y patrones aplicados
 
-| Principio | Dónde se aplica |
-| --- | --- |
-| Responsabilidad única (SOLID) | [[Ej. AudioManager solo reproduce audio]] |
-| [[Abierto/cerrado, inversión de dependencias…]] | [[Dónde]] |
+Cómo se organiza el código. El singleton es un patrón de diseño, no un principio; aquí van los dos, junto con la base de programación orientada a objetos (POO).
+
+- **Responsabilidad única (SOLID):** cada script hace una sola cosa: PlayerMovement mueve, PlayerHealth maneja los corazones, InkTrail deja el rastro y AudioManager solo reproduce sonido.
+- **Abierto/cerrado (SOLID):** Collectible es la base; MemoryTape, InkPickup y HeartPickup la extienden sin cambiarla. Un recogible nuevo es una clase nueva.
+- **Sustitución de Liskov (SOLID):** BossReplacement deriva de EnemyAI y funciona en cualquier lugar donde funciona un enemigo.
+- **Segregación de interfaces (SOLID):** IDamageable solo pide TakeDamage(); la implementan la protagonista, los enemigos y El Reemplazo.
+- **Inversión de dependencias (SOLID):** la UI y el audio no buscan al GameManager: escuchan sus eventos (OnHeartsChanged, OnTapeFound, OnAlarm).
+- **Singleton (patrón):** el GameManager es la única instancia y guarda el estado de la partida.
+- **Observer (patrón):** los eventos de C# conectan el GameManager con la UI, el audio y las puertas.
+- **Máquina de estados (patrón):** EnemyAI cambia entre Patrol, Investigate, Chase y Stunned.
+- **POO:** herencia (Character → PlayerController y EnemyAI), polimorfismo (TakeDamage() distinto en cada uno) y encapsulamiento (variables privadas con [SerializeField] para ajustarlas desde el Inspector).
 
 ## Convenciones del proyecto
 
@@ -88,4 +95,4 @@ El GameManager es el único singleton. Las demás clases le avisan por eventos y
 - Jerarquía de escena igual en todas: `--- Managers ---`, `--- Environment ---`, `--- Gameplay ---`, `--- UI ---`, `--- Lighting ---`, `--- Audio ---`.
 - Comentarios en inglés; valores ajustables expuestos en el Inspector.
 - Issues, PRs y commits en inglés. Cada asset va en el mismo commit que su archivo `.meta`.
-- Tablero del equipo en Trello (privado, el enlace está en el Google Doc). Repositorio del juego: [[enlace al repo de GitHub]].
+- Tablero del equipo en Trello (privado; el enlace está en el Google Doc). Repositorio del juego: [Vacuumgentleman/FinalProject](https://github.com/Vacuumgentleman/FinalProject).

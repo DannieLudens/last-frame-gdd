@@ -18,8 +18,8 @@ La IA sí se usa como herramienta del proceso:
 
 | Herramienta | Para qué se usó | En qué parte | Quién |
 | --- | --- | --- | --- |
-| ChatGPT | Diseño de los enemigos (referencia actual) | Personajes | [[Nombre]] |
-| ChatGPT | Moodboards e ideas para la interfaz | Arte y UI | [[Nombre]] |
+| ChatGPT | Diseño de los enemigos (referencia actual) | Personajes | Laura Muñoz Perez |
+| ChatGPT | Moodboards e ideas para la interfaz | Arte y UI | Laura Muñoz Perez |
 | Claude | Redacción y revisión del GDD y de esta web | Documentación | Daniel |
 
 ## Dónde se declara

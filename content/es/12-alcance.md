@@ -38,7 +38,7 @@ El equipo no cobra (es un proyecto del bootcamp), pero para el pitch se estima c
 
 - **Flat Kit:** US$39,90 a precio normal (https://assetstore.unity.com/packages/vfx/shaders/flat-kit-toon-shading-and-water-143368).
 - **Senses 3:** US$50 (https://assetstore.unity.com/packages/tools/behavior-ai/senses-3-ai-vision-hearing-smell-system-345466).
-- **Shader de contorno:** precio por confirmar con Sebas.
+- **Contorno:** viene incluido en Flat Kit, sin costo adicional.
 - **Subtotal: US$89,90 = COP 297.529**.
 
 ### Equipos y servicios (estimación propia)

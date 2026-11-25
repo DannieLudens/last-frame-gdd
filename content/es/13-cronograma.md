@@ -13,7 +13,7 @@ El detalle de tareas está en el tablero de Trello del equipo: Proyecto final en
 ## Sprint 1, mecánicas core: jueves 26 de noviembre, 4:15 p. m.
 
 - GDD v1 con las bases del juego (todo el equipo).
-- Tablero de Trello y repositorio de GitHub con ramas de todos (Sebas).
+- Tablero de Trello y repositorio de GitHub con ramas de todos (Sebas). Repositorio del juego: https://github.com/Vacuumgentleman/FinalProject
 - Escena de pruebas con primitivas: movimiento, sigilo, enemigo con patrulla, disparo de tinta y cambio de arma (Daniel y Sebas).
 
 ## Sprint 2, Alpha: jueves 3 de diciembre, 9:30 a. m.

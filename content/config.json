@@ -11,7 +11,7 @@
   },
   "estudio": "The Strokes",
   "version": "0.1",
-  "fecha": "2026-11-24",
+  "fecha": "2026-11-25",
   "equipo": [
     "Juan Sebastián Gravini Contreras",
     "Oscar Alberto Pinedo Camacho",
@@ -19,7 +19,7 @@
     "Nerlyn Juliet Carlosama Molina",
     "Daniel Esteban Ardila Alzate"
   ],
-  "logo": "assets/img/logo/last-frame-logo.svg",
+  "logo": "assets/img/logo/logo-equipo.png",
   "idiomaBase": "es",
   "idiomas": [
     "es"
@@ -71,14 +71,6 @@
       "archivo": "09-arte.md"
     },
     {
-      "id": "progresion",
-      "archivo": "extras/progresion.md",
-      "etiqueta": {
-        "es": "Opcional",
-        "en": "Optional"
-      }
-    },
-    {
       "id": "audio",
       "archivo": "10-audio.md"
     },
@@ -103,44 +95,12 @@
       "archivo": "11-monetizacion.md"
     },
     {
-      "id": "publicidad",
-      "archivo": "extras/publicidad.md",
-      "etiqueta": {
-        "es": "Opcional",
-        "en": "Optional"
-      }
-    },
-    {
       "id": "alcance",
       "archivo": "12-alcance.md"
     },
     {
       "id": "cronograma",
       "archivo": "13-cronograma.md"
-    },
-    {
-      "id": "pruebas",
-      "archivo": "extras/pruebas.md",
-      "etiqueta": {
-        "es": "Opcional",
-        "en": "Optional"
-      }
-    },
-    {
-      "id": "mejoras",
-      "archivo": "extras/mejoras.md",
-      "etiqueta": {
-        "es": "Opcional",
-        "en": "Optional"
-      }
-    },
-    {
-      "id": "wishlist",
-      "archivo": "extras/wishlist.md",
-      "etiqueta": {
-        "es": "Opcional",
-        "en": "Optional"
-      }
     },
     {
       "id": "versiones",

@@ -25,6 +25,8 @@
       fecha: 'Fecha',
       estudio: 'Estudio',
       jugar: 'Jugar en itch.io',
+      copiar: 'Copiar',
+      copiado: 'Copiado',
       pronto: 'Próximamente en itch.io',
       equipo: 'Equipo',
       antes: 'Antes',
@@ -56,6 +58,8 @@
       fecha: 'Date',
       estudio: 'Studio',
       jugar: 'Play on itch.io',
+      copiar: 'Copy',
+      copiado: 'Copied',
       pronto: 'Coming soon to itch.io',
       equipo: 'Team',
       antes: 'Before',
@@ -158,14 +162,14 @@
       const cards = ROLES.map(([v, name, use]) => {
         const value = styles.getPropertyValue(v).trim(); // e.g. #ffb238
         return `<div class="muestra"><div class="muestra__color" style="background:var(${v})"></div>` +
-          `<div class="muestra__info"><strong>${esc(name)}</strong><code>${esc(value)}</code><br><span>${esc(use)}</span></div></div>`;
+          `<div class="muestra__info"><strong>${esc(name)}</strong>${copyable(value)}<span>${esc(use)}</span></div></div>`;
       });
       return `<div class="paleta">${cards.join('')}</div>`;
     }
     if (lang === 'colores') { // Name | #hex | use, one color per line
       const cards = rows(token.text).map(([name, hex, use]) =>
         `<div class="muestra"><div class="muestra__color" style="background:${esc(hex)}"></div>` +
-        `<div class="muestra__info"><strong>${esc(name)}</strong><code>${esc(hex)}</code><br><span>${marked.parseInline(use || '')}</span></div></div>`);
+        `<div class="muestra__info"><strong>${esc(name)}</strong>${copyable(hex)}<span>${marked.parseInline(use || '')}</span></div></div>`);
       return `<div class="paleta">${cards.join('')}</div>`;
     }
     if (lang === 'marquesina') { // image | caption: the image framed by the ring of lights
@@ -293,6 +297,39 @@
     });
   }
 
+  // A value with a copy button (two overlapping squares); the click is handled once in copyListener
+  const COPY_ICON = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>';
+  const CHECK_ICON = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+  function copyable(value) {
+    const v = esc(value);
+    return `<span class="copiable"><code>${v}</code><button type="button" class="copiar no-imprimir" data-copiar="${v}" aria-label="${esc(t().copiar)} ${v}" title="${esc(t().copiar)}">${COPY_ICON}</button></span>`;
+  }
+
+  // Copies with the Clipboard API, or with a hidden textarea where the page cannot use it
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text).catch(() => legacyCopy(text));
+    return Promise.resolve(legacyCopy(text));
+  }
+  function legacyCopy(text) {
+    const area = document.createElement('textarea');
+    area.value = text; area.setAttribute('readonly', ''); area.style.cssText = 'position:fixed;opacity:0';
+    document.body.appendChild(area); area.select();
+    try { document.execCommand('copy'); } catch (e) { /* nothing else to try */ }
+    area.remove();
+  }
+  function copyListener() {
+    document.addEventListener('click', e => {
+      const btn = e.target.closest('.copiar');
+      if (!btn) return;
+      copyText(btn.dataset.copiar).then(() => {
+        btn.innerHTML = CHECK_ICON; btn.classList.add('copiado');
+        btn.setAttribute('aria-label', `${t().copiado}: ${btn.dataset.copiar}`);
+        clearTimeout(btn._t);
+        btn._t = setTimeout(() => { btn.innerHTML = COPY_ICON; btn.classList.remove('copiado'); btn.setAttribute('aria-label', `${t().copiar} ${btn.dataset.copiar}`); }, 1400);
+      });
+    });
+  }
+
   // "Play on itch.io" blot under the cover; shows "coming soon" until config.itch has a URL
   function playButton(c, ui) {
     if (c.itch === undefined) return '';
@@ -320,7 +357,7 @@
       `<li>${esc(ui.fecha)}: <strong>${esc(c.fecha)}</strong></li></ul>` +
       playButton(c, ui);
     const keyArt = getComputedStyle(document.documentElement).getPropertyValue('--portada-imagen').trim();
-    if (!keyArt || keyArt === 'none') {
+    if ((!keyArt || keyArt === 'none') && !c.logo) { // with a logo the cover is complete
       $('#portada').insertAdjacentHTML('beforeend', `<p class="portada__pendiente no-imprimir">${esc(ui.keyArt)}</p>`); // reminder for the team
     }
     const short = c.siglas || 'GDD'; // short name next to the title
@@ -414,11 +451,43 @@
     const total = state.sections.reduce((n, s) => n + s.pending, 0);
     const items = state.sections.map(s =>
       `<li><a href="#${s.id}" data-id="${s.id}"><span class="indice__num">${s.num}</span>` +
-      `<span>${esc(s.title)}</span>${s.pending ? `<span class="indice__badge" title="${esc(ui.porDefinir)}">${s.pending}</span>` : ''}</a></li>`);
+      `<span class="indice__nombre">${esc(s.title)}</span>${s.pending ? `<span class="indice__badge" title="${esc(ui.porDefinir)}">${s.pending}</span>` : ''}</a></li>`);
     $('#indice').innerHTML =
       `<p class="indice__titulo">${esc(ui.indice)}</p>` +
       `<p class="indice__pendientes">${ui.pendientes(total)}</p><ol>${items.join('')}</ol>`;
     $('#indice').querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+    filmStrip($('#indice'));
+  }
+
+  // Desktop index as a film strip: frames grow near the cursor like the macOS dock and bend the strip
+  function filmStrip(nav) {
+    const desk = window.matchMedia('(min-width: 961px)');
+    const calm = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const items = [...nav.querySelectorAll('li')];
+    const fit = () => nav.style.setProperty('--n-cuadros', items.length); // CSS sizes frames to fit the screen
+    fit();
+    let frame = 0;
+    const apply = y => {
+      items.forEach(li => {
+        const r = li.getBoundingClientRect();
+        const d = y === null ? Infinity : Math.abs(y - (r.top + r.height / 2)); // distance to the cursor
+        const k = Math.max(0, Math.cos(Math.min(d / 120, 1) * Math.PI / 2)); // 1 under the cursor, 0 far away
+        li.style.setProperty('--k', k.toFixed(3));
+      });
+    };
+    const reset = () => { cancelAnimationFrame(frame); items.forEach(li => li.style.setProperty('--k', 0)); };
+    nav.addEventListener('mousemove', e => {
+      if (!desk.matches || calm.matches) return;
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => apply(e.clientY));
+    });
+    nav.addEventListener('mouseleave', reset);
+    nav.addEventListener('focusin', e => { // keyboard: the focused frame grows like a hovered one
+      if (!desk.matches || calm.matches) return;
+      const r = e.target.getBoundingClientRect();
+      apply(r.top + r.height / 2);
+    });
+    nav.addEventListener('focusout', e => { if (!nav.contains(e.relatedTarget)) reset(); });
   }
 
   // Builds the table of contents that only shows in the PDF
@@ -615,6 +684,7 @@
       if (!res.ok) throw new Error('config.json');
       state.config = await res.json();
       state.lang = pickLanguage(state.config.idiomas, state.config.idiomaBase);
+      copyListener();
       $('#btn-descargar').addEventListener('click', e => { e.stopPropagation(); toggleDownloads(); });
       document.addEventListener('click', e => { if (!e.target.closest('#descargas')) toggleDownloads(false); });
       $('#btn-menu').addEventListener('click', () => toggleMenu());

@@ -12,10 +12,16 @@ Fichas de los personajes. Los rasgos salen de la historia y de los bocetos de ar
 - **Habilidades:** caminar, correr, agacharse, pluma de tinta (distancia), corrector líquido (cuerpo a cuerpo), cambio de arma con Q. Salud: 3 corazones.
 - **Animaciones:** idle, caminar, correr, agachada, disparar tinta, golpe con corrector, cambiar arma, recibir golpe y sangrar tinta, ser borrada, recoger cinta, victoria.
 
+Así evolucionó la protagonista: el equipo votó entre tres bocetos y dos paletas, y eligió el boceto 3 con la paleta B.
+
 ```galeria
-assets/img/personajes/personaje-1-v1.png | [[v1: primer boceto]]
-assets/img/personajes/personaje-1-v2.png | [[v2: qué cambió y por qué]]
-assets/img/personajes/personaje-1-final.png | [[Versión final]]
+assets/img/personajes/protagonista-v1-boceto.png | v1: boceto elegido (el 3 de 3)
+assets/img/personajes/protagonista-v2-color.png | Versión final: el boceto 3 con la paleta B
+```
+
+```galeria
+assets/img/personajes/protagonista-bocetos.png | Los tres bocetos que se votaron
+assets/img/personajes/protagonista-opciones-color.png | Las seis combinaciones de boceto y paleta (B y C)
 ```
 
 ## Caricaturas de IA (enemigos)
@@ -27,9 +33,21 @@ assets/img/personajes/personaje-1-final.png | [[Versión final]]
 - **Comportamiento:** patrullan, investigan ruidos, siguen el rastro de tinta y persiguen con su borrador. Aguantan 2 impactos de tinta; por la espalda, el corrector los borra de un golpe.
 - **Animaciones:** patrullar, investigar, perseguir, golpear con borrador, mancharse, disolverse.
 
+```galeria
+assets/img/personajes/enemigos-referencia.png | Referencia actual de los enemigos
+```
+
+> [!ia] Esta referencia de los enemigos se hizo con IA (ChatGPT). El diseño final está por definir.
+
 ## El Reemplazo (jefe final)
 
 - **Rol:** jefe del set 5.
 - **Concepto:** una copia de la protagonista perfeccionada con IA, pero sin alma, hecha para sustituirla del todo. Oscar hace el boceto.
 - **Aspecto:** el mismo diseño de ella, pero perfecto, vectorial y brillante, sin trazo a mano.
 - **Comportamiento:** fases y ataques por diseñar en el Sprint 2.
+
+```galeria
+assets/img/personajes/reemplazo-referencia-ia.png | El Reemplazo: la protagonista "perfeccionada" por IA
+```
+
+> [!ia] Esta imagen se generó con IA a partir del diseño de la protagonista. Sirve como referencia de El Reemplazo justamente por eso: es la versión perfecta y sin alma. Oscar hace el boceto final.

@@ -4,7 +4,7 @@
 
 El sonido refuerza el pilar Alma vs. Algoritmo. Lo de la protagonista suena acústico y tocado a mano, como la música de las caricaturas clásicas: big band, piano de vodevil, contrabajo en pizzicato, xilófono y efectos de foley exagerados. Lo de la IA suena perfecto y sintético: loops electrónicos cuantizados y voces procesadas como los del google translate.
 
-La música es por capas según el peligro: en calma, un tema sigiloso de puntillas; al investigar, entra percusión; en persecución, entran los metales y musica acelerada. Así el jugador sabe cómo va sin mirar la pantalla.
+La música es por capas según el peligro: en calma, un tema sigiloso de puntillas; al investigar, entra percusión; en persecución, entran los metales y música acelerada. Así el jugador sabe cómo va sin mirar la pantalla.
 
 Referencias: las orquestas de las caricaturas clásicas, el jazz de Cuphead y la música sigilosa de Pink Panther como idea de tono.
 
