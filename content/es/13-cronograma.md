@@ -8,7 +8,7 @@ Sprint 3: Beta en itch.io | 7 dic, 4:15 p. m. | hito
 Game Connect: pitch con publishers | 11 dic, 9:15 a. m. | hito
 ```
 
-El detalle de tareas está en el tablero de Trello del equipo (privado; el enlace está en el Google Doc).
+El detalle de tareas está en el tablero de Trello del equipo: Proyecto final en Trello (privado; el enlace está en el Google Doc). Estas son las entregas y lo principal de cada sprint:
 
 ## Sprint 1, mecánicas core: jueves 26 de noviembre, 4:15 p. m.
 
@@ -20,9 +20,9 @@ El detalle de tareas está en el tablero de Trello del equipo (privado; el enlac
 
 - Diagramación y montaje de las 5 salas (Oscar y Laura).
 - Senses 3, cámaras, alarma, ruido y oscuridad (Sebas).
-- Combate, corazones, rastro de tinta, reinicio de sala, enemigos y gestor de escenas con orden aleatorio (Daniel).
+- Combate, corazones, rastro de tinta, game over y tiempo límite, enemigos y gestor de escenas con orden aleatorio (Daniel).
 - HUD y menús (Laura); primera pasada de música y efectos (Nerlyn).
-- Alpha publicada en itch.io; audiencia, monetización y analíticas en el GDD; presentaciones preliminares.
+- Alpha publicada en itch.io y pruebas de usabilidad con usuarios; audiencia, monetización y analíticas en el GDD; presentaciones preliminares.
 
 ## Sprint 3, Beta: lunes 7 de diciembre, 4:15 p. m.
 

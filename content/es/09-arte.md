@@ -1,10 +1,12 @@
 # Arte visual
 
-El detalle completo va en el sistema de diseño del proyecto: [[enlace, si existe]]. Aquí va el resumen que necesita un lector externo.
+El detalle completo va en el sistema de diseño del proyecto. Aquí va el resumen que necesita un lector externo.
 
 ## Estilo
 
-3D con cámara cenital (top-down) y look de caricatura con sombreado toon (Flat Kit). El estudio y la protagonista se ven hechos a mano: trazo de lápiz, colores desparejos, madera y papel. Los enemigos de IA se ven brillantes, simétricos y genéricos. [[Luz, ánimo e imagen objetivo.]]
+El estilo gráfico escogido para desarrollar nuestro videojuego es el cartoon clásico, tipo caricatura de los años 80, nos enfocamos en integrar esta estética para el personaje principal, los props, y el diseño de nivel en general, haciendo que el estudio de televisión y animación esté ambientado en una época clásica en la cual se produjo el auge de las caricaturas en la televisión hechas a mano y con mucho amor e intención.
+
+Los personajes y props 3D se modelan en Blender y se ven en Unity con sombreado toon (posibilidad de Flat Kit) y un shader de contorno tipo caricatura (nombre por confirmar con Sebas), para que todo parezca dibujado.
 
 ```galeria
 assets/img/arte/imagen-objetivo.png | Imagen objetivo: la referencia de todo el arte
@@ -58,30 +60,61 @@ Las dos fuentes son de Google Fonts con licencia OFL: [DynaPuff](https://fonts.g
 
 ## Interfaz (UI y HUD)
 
-Menú principal: un escenario de teatro con telón rojo y un aro de bombillos alrededor. Los botones son manchas de tinta con texto en DynaPuff: Jugar en mostaza (la opción activa, con la pluma al lado) y Opciones y Salir en café tinta. Este GDD usa el mismo aro y las mismas manchas.
+El menú principal se presenta como un escenario con cortinas y un marco ovalado iluminado por bombillos. Los botones tienen forma de manchas de tinta, con una variante negra para el estado normal y una dorada para la opción resaltada.
+
+El HUD reúne sus elementos en un contenedor oscuro compartido, tomando como base el marco de los corazones (vida), el ojo (sigilo), el contador de cintas (objetos coleccionables), el tintero (tinta disponible) y la pluma con su tecla **Q**.
 
 ```marquesina
-assets/img/ui/menu-principal-exploracion.jpg | Exploración del menú principal. [[Cambiar el título "Caricaturas Canceladas" por Last Frame.]]
+assets/img/ui/menu-principal-exploracion.jpg | Exploración del menú principal.
 ```
 
-> [!ia] [[Confirmar si esta imagen se hizo con IA.]] Si es así, es exploración de estilo y no un asset final, según la política de IA del equipo.
-
-```galeria
-assets/img/ui/hud.png | [[HUD: cinta (0/1), tinta (x/5), vidas]]
-```
+> [!ia] Los bocetos del menú y del HUD se iteraron con IA como exploración de estilo; no son assets finales.
 
 ## Lista de assets
 
-Formatos, tamaños y nombres según las especificaciones técnicas de arte.
+Cómo se producen y se nombran los assets del proyecto.
 
-| Asset | Tipo | Formato y tamaño | Animaciones | Responsable | Estado |
-| --- | --- | --- | --- | --- | --- |
-| [[SPR_Player]] | Personaje | [[PNG, 128 px de alto]] | [[Idle, Run, Jump]] | [[Nombre]] | [[Por hacer]] |
-| [[Tileset del nivel 1]] | Entorno | [[PNG 32 px]] | — | [[Nombre]] | [[Por hacer]] |
-| [[Ítem]] | Objeto | [[PNG]] | [[Brillo]] | [[Nombre]] | [[Por hacer]] |
-| [[Botón base]] | UI | [[PNG 9-slice]] | [[Hover, Pressed]] | [[Nombre]] | [[Por hacer]] |
+- **Herramientas:** Photoshop (protagonista, texturas, props 2D, UI), Figma (UI, mockups y sistema de diseño), Blender (modelos 3D de personajes y props), ChatGPT (imágenes de exploración y algunos assets) y Claude (apoyo en redacción de documentación y código).
+- **Paquetes de la Unity Asset Store:** Senses 3 (percepción de enemigos), Flat Kit (sombreado toon) y un shader de contorno tipo caricatura para el trazo de los objetos 3D (nombre por confirmar con Sebas).
+- **Formatos y tamaños:** texturas e ilustraciones en PNG (tentativa de 512, 1024 o 2048 px de lado); sprites de UI en PNG con transparencia (botones mancha en 9-slice); modelos en FBX (1 unidad = 1 metro, pivote en la base); SFX en WAV y música en OGG; fuentes TTF u OTF (Caprasimo y DynaPuff).
+- **Nombres:** prefijo por tipo y nombre dentro de los assets de unity en PascalCase:
+  - TEX_ (texturas),
+  - SPR_ (sprites),
+  - MAT_ (materiales),
+  - MDL_ (modelos),
+  - PF_ (prefabs),
+  - UI_,
+  - SFX_,
+  - MUS_,
+  - FNT_ y
+  - VFX_.
+  - Ejemplo: PF_Enemy_Office, TEX_PropBox_01.
+- **Carpetas:** Assets/_Project/Art, Audio, Prefabs, Scenes y Scripts; pruebas personales en Assets/_Sandbox/<nombre>.
+- **Uso de IA:** el diseño de los enemigos se hizo con IA (ChatGPT) y así se declara. Los demás assets se hacen a mano. La IA también se usa para revisar código, para buscar referencias, como moodboards o ideas de cómo podrían verse las interfaces. Todo uso de IA se anota en los créditos.
 
-## Material promocional
+### Personajes
+
+- Boceto inicial del personaje principal, utilizamos el estilo cartoon clásico para el diseño de está aventurera de caricatura clásica, añadido a esto, incluimos ropa de chica rebelde para indicar que está en guerra con las imágenes generadas por inteligencia artificial, finalmente, el personaje tiene armas y municiones para dibujar y desdibujar a sus enemigos a su antojo.
+- Diseño inicial de los enemigos hechos por la IA, el concepto gráfico de estos personajes se basa en los personajes genéricos diseñados por la IA que se pueden ver hoy en día en anuncios publicitarios, además tienen vestimenta de coworkers y empresarios porque hacen referencia al progreso y la productividad. Es una referencia: el diseño final de los enemigos está por definir.
+
+### Entorno
+
+- MoodBoard
+
+### Objetos
+
+- Objetos para la construcción de los niveles, props de televisión y cine.
+- Objetos para la construcción de los niveles, prop de escritorio de animación cuadro por cuadro.
+- Props de construcción para el nivel, cámaras de cine y cintas de cine antiguas.
+
+### Material promocional
+
+- Poster promocional del videojuego.
+- Imagen principal del cover.
+- Imagen del banner.
+- Contenido de las memorias de la protagonista.
+
+### Piezas para la publicación
 
 | Pieza | Formato | Dónde se usa |
 | --- | --- | --- |

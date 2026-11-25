@@ -4,24 +4,23 @@
 
 ## Política del equipo
 
-Ejemplo de política; ajústala a lo que decida el equipo.
+**El diseño actual de los enemigos se hizo con IA (ChatGPT) y así se declara.** Esa imagen es la referencia de hoy; el diseño final está por definir.
 
-**Ningún asset visual final (personajes, entorno, ítems, UI, key art) lo genera una IA: lo hace el equipo.**
+Los demás assets (protagonista, entorno, props, UI y logo) los hace el equipo a mano en Photoshop, Figma y Blender.
 
 La IA sí se usa como herramienta del proceso:
 
-- Armar el moodboard y explorar conceptos de estilo.
-- Estudiar paletas de color.
-- Probar ideas de caracterización de entorno, personajes e ítems.
-
-Si una propuesta de la IA gusta, sirve como inspiración o referencia, pero el asset final lo dibuja o modela el equipo. La sección de Progresión visual muestra el camino de cada asset, de boceto a versión final.
+- Armar moodboards y buscar referencias de estilo.
+- Explorar ideas de cómo podrían verse las interfaces (los bocetos del HUD en Miro se iteraron con IA).
+- Apoyo en la redacción y organización del GDD.
 
 ## Registro de uso
 
 | Herramienta | Para qué se usó | En qué parte | Quién |
 | --- | --- | --- | --- |
-| [[Herramienta]] | [[Ej. explorar paletas]] | [[Arte: paleta]] | [[Nombre]] |
-| [[Herramienta]] | [[Ej. apoyo en programación o revisión de código]] | [[Scripts]] | [[Nombre]] |
+| ChatGPT | Diseño de los enemigos (referencia actual) | Personajes | [[Nombre]] |
+| ChatGPT | Moodboards e ideas para la interfaz | Arte y UI | [[Nombre]] |
+| Claude | Redacción y revisión del GDD y de esta web | Documentación | Daniel |
 
 ## Dónde se declara
 

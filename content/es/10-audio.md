@@ -2,16 +2,16 @@
 
 ## Estilo
 
-El sonido refuerza el pilar Alma vs. Algoritmo. Lo de la protagonista suena acústico y tocado a mano, como la música de las caricaturas clásicas: big band, piano de vodevil, contrabajo en pizzicato, xilófono y efectos de foley exagerados. Lo de la IA suena perfecto y sintético: loops electrónicos cuantizados, como música de oficina, y voces procesadas.
+El sonido refuerza el pilar Alma vs. Algoritmo. Lo de la protagonista suena acústico y tocado a mano, como la música de las caricaturas clásicas: big band, piano de vodevil, contrabajo en pizzicato, xilófono y efectos de foley exagerados. Lo de la IA suena perfecto y sintético: loops electrónicos cuantizados y voces procesadas como los del google translate.
 
-La música es por capas según el peligro: en calma, un tema sigiloso de puntillas; al investigar, entra percusión; en persecución, entran los metales. Así el jugador sabe cómo va sin mirar la pantalla.
+La música es por capas según el peligro: en calma, un tema sigiloso de puntillas; al investigar, entra percusión; en persecución, entran los metales y musica acelerada. Así el jugador sabe cómo va sin mirar la pantalla.
 
 Referencias: las orquestas de las caricaturas clásicas, el jazz de Cuphead y la música sigilosa de Pink Panther como idea de tono.
 
 ## Música
 
-- **Menú principal:** marcha de vodevil lenta con piano, bajo y el zumbido de los bombillos.
-- **Set 1 (tutorial):** pizzicato sigiloso, suave, para aprender sin presión.
+- **Menú principal:** [marcha de vodevil](https://www.youtube.com/watch?v=CGn41TzqAZc) lenta con piano, bajo y el zumbido de los bombillos.
+- **Set 1 (tutorial):** [pizzicato sigiloso](https://pixabay.com/es/sound-effects/search/pizzicato%20sigiloso/), suave, para aprender sin presión.
 - **Sets 2 a 4:** el mismo tema sigiloso con un instrumento líder distinto por set (clarinete, xilófono, trompeta con sordina), en capas de calma, alerta y persecución.
 - **Recuerdo (al recoger una cinta):** tema de la protagonista en caja de música, con el sonido de un proyector viejo.
 - **El Reemplazo (set 5):** el tema de la protagonista tocado por sintetizadores fríos y perfectos, que se va rompiendo cuando ella gana.

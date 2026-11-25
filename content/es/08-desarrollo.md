@@ -2,16 +2,16 @@
 
 ## Clases
 
-Clases principales, de las bases a las derivadas. Los valores son iniciales y se ajustan en las pruebas.
+Clases principales, de las bases a las derivadas. Los valores son iniciales y se ajustan en las pruebas y son posibilidades no garantizamos que se usen todos, está dispuesto a cambios en el proceso.
 
-### GameManager (singleton)
+### GameManager (patrón de diseño singleton)
 
 - **Estados:** MainMenu, Playing, Paused, Memory, GameOver y Victory.
-- **Propiedades:** currentState, currentSet, setOrder (sets 2 a 4 barajados), tapesFound (0 a 5), ink.
-- **Métodos:** ChangeState(), StartRun(), LoadNextSet(), RestartRoom(), TogglePause().
+- **Propiedades:** currentState, currentSet, setOrder (sets 2 a 4 barajados), tapesFound (0 a 5), ink, setTimeLeft.
+- **Métodos:** ChangeState(), StartRun(), LoadNextSet(), GameOver(), ShowResults(), TogglePause().
 - **Eventos:** OnStateChanged, OnTapeFound, OnInkChanged, OnHeartsChanged, OnAlarm. La UI y el audio escuchan estos eventos en lugar de buscar al GameManager.
 
-### Character (base, implementa IDamageable)
+### Character (base, implementa interfaz IDamageable)
 
 - **Base:** health, moveSpeed; TakeDamage(), Die().
 - **PlayerController:** hearts 3, walkSpeed 3, runSpeed 6, crouchSpeed 1.5, isBleeding, currentWeapon. Scripts: PlayerMovement, PlayerHealth, InkTrail, WeaponSwitcher, InkPen, CorrectorMelee.
@@ -35,7 +35,7 @@ Clases principales, de las bases a las derivadas. Los valores son iniciales y se
 - **LightZone:** trigger con exposure (0 en sombra, 1 bajo reflector).
 - **SecurityCamera:** barrido entre dos ángulos, blindTime 2.5 s; dispara OnAlarm.
 - **SetDoor:** la puerta de salida de cada set; llama a GameManager.LoadNextSet().
-- **SceneLoader:** entrada y salida de cada set y reinicio de sala.
+- **SceneLoader:** entrada y salida de cada set y regreso al menú principal tras el game over.
 - **UIManager y AudioManager:** escuchan los eventos del GameManager.
 
 ### Diagrama de clases del GameManager
@@ -50,14 +50,17 @@ classDiagram
     +List~int~ setOrder
     +int tapesFound
     +int ink
+    +float setTimeLeft
     +StartRun()
     +LoadNextSet()
-    +RestartRoom()
+    +GameOver()
+    +ShowResults()
     +ChangeState(GameState)
     +TogglePause()
   }
   PlayerHealth ..> GameManager : OnHeartsChanged
   MemoryTape ..> GameManager : OnTapeFound
+  MemoryTape ..> SetDoor : desbloquea
   SetDoor ..> GameManager : LoadNextSet()
   SecurityCamera ..> GameManager : OnAlarm
   GameManager ..> EnemyAI : envía a investigar

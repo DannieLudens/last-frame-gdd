@@ -566,3 +566,8 @@ a.portada__jugar:hover::before, a.portada__jugar:focus-visible::before { transfo
 a.portada__jugar:focus-visible { outline: 2px dashed var(--lf-marfil); outline-offset: 6px; }
 .portada__jugar--pronto { color: var(--lf-marfil); cursor: default; }
 .portada__jugar--pronto::before { background: var(--lf-ciruela); }
+
+/* Logo del juego en lugar del titulo de texto (placeholder hasta el logo del equipo) */
+.portada__titulo--logo { margin: 0.2rem auto 0.6rem; line-height: 0; }
+.portada__titulo--logo img { display: block; width: min(460px, 72vw); height: auto; margin: 0 auto; }
+.idiomas[hidden] { display: none; }

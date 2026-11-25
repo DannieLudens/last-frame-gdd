@@ -308,9 +308,11 @@
     const pitch = localized(c.pitch) || '[[Elevator pitch: el juego en una frase]]';
     $('#portada').innerHTML =
       marqueeRing() +
-      (c.logo ? `<img class="portada__logo" src="${esc(c.logo)}" alt="">` : '') +
+
       `<p class="portada__etiqueta">${esc(localized(c.tipo) || ui.etiqueta)}, ${esc(ui.version.toLowerCase())} ${esc(c.version)}</p>` +
-      `<h1 class="portada__titulo">${esc(c.titulo)}</h1>` +
+      (c.logo // the game logo replaces the text title; alt keeps the name for screen readers
+        ? `<h1 class="portada__titulo portada__titulo--logo"><img src="${esc(c.logo)}" alt="${esc(c.titulo)}"></h1>`
+        : `<h1 class="portada__titulo">${esc(c.titulo)}</h1>`) +
       `<p class="portada__pitch">${marked.parseInline(pitch)}</p>` +
       `<ul class="portada__meta">` +
       `<li>${esc(ui.estudio)}: <strong>${esc(c.estudio)}</strong></li>` +
@@ -363,7 +365,7 @@
 
   function placeAllBulbs() {
     document.querySelectorAll('.marquesina').forEach(placeBulbs);
-    document.querySelectorAll('.enmarcado img:not([data-escucha])').forEach(img => { // framed images resize when loaded
+    document.querySelectorAll('.enmarcado img:not([data-escucha]), .portada__titulo--logo img:not([data-escucha])').forEach(img => { // framed images resize when loaded
       img.dataset.escucha = '1';
       img.addEventListener('load', placeAllBulbs, { once: true });
     });
@@ -504,6 +506,7 @@
   // Builds the ES/EN switch
   function renderLanguages() {
     const box = $('#idiomas');
+    box.hidden = state.config.idiomas.length < 2; // no switch while there is only one language
     box.innerHTML = state.config.idiomas.map(l =>
       `<button type="button" data-lang="${l}" aria-pressed="${l === state.lang}">${l.toUpperCase()}</button>`).join('');
     box.querySelectorAll('button').forEach(b => b.addEventListener('click', () => changeLanguage(b.dataset.lang)));

@@ -16,7 +16,7 @@ Cada ruido dibuja ondas de garabato en el suelo, del tamaño de su radio. Así l
 
 ## Golpe y rastro de tinta
 
-Al recibir un golpe, un corazón del HUD se rompe, la pantalla se sacude un instante y la protagonista salpica tinta. Mientras sangra, deja gotas berenjena en el suelo que se secan en unos 6 segundos, y el HUD muestra una gota que se vacía.
+Al recibir un golpe, un corazón del HUD se rompe, la pantalla se sacude un instante y la protagonista salpica tinta. Mientras sangra, va lento y deja gotas de tinta de su paleta de color en el suelo que se secan en unos 6 segundos. Cuando el rastro se seca, deja de sangrar; el HUD solo muestra el corazón vacío.
 
 ## Cámaras
 
@@ -28,4 +28,4 @@ La cinta, los tinteros y los corazones flotan y brillan con trazo de lápiz; la 
 
 ## HUD
 
-Corazones (3), tinta disponible, cintas recuperadas (x/5) y el ícono del arma equipada (pluma o corrector). En el set 5 aparece la barra de vida de El Reemplazo. El diseño final del HUD lo hace Laura.
+Un contenedor oscuro reúne los corazones (3), el ojo de sigilo, el contador de cintas (x/5), el tintero (se vacía o se llena, sin números) y el arma equipada con su tecla Q. Falta ubicar el tiempo restante del set. En el set 5 aparece la barra de vida de El Reemplazo. Diseño: Laura.

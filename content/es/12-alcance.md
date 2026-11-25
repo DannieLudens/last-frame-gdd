@@ -2,7 +2,7 @@
 
 ## Tiempo de desarrollo
 
-Desarrollo del 24 de noviembre al 7 de diciembre de 2026, con jornada de 9:00 a 17:00, y pitch con publishers el 11 de diciembre. Las fechas son las del bootcamp, salvo que los mentores las cambien:
+Desarrollo del 24 de noviembre al 7 de diciembre de 2026, con jornada de 9:00 a 17:00, más horas extra en la noche u otros horarios cuando alguien no pueda trabajar de día por actividades personales, y pitch con publishers el 11 de diciembre. Las fechas son las del bootcamp, salvo que los mentores las cambien:
 
 - Sprint 1, mecánicas core: entrega el jueves 26 de noviembre, 4:15 p. m.
 - Sprint 2, Alpha en itch.io: entrega el jueves 3 de diciembre, 9:30 a. m.
@@ -16,14 +16,14 @@ Desarrollo del 24 de noviembre al 7 de diciembre de 2026, con jornada de 9:00 a 
 
 ## Costos
 
-El equipo no cobra (es un proyecto del bootcamp), pero para el pitch se estima cuánto costaría producir el juego en Colombia con un equipo contratado, durante 3 semanas (0,75 meses). Tasa de cambio usada: COP 3.309,55 por dólar (TRM del 18 de noviembre de 2026, Portafolio: https://www.portafolio.co/economia/finanzas/dolar-en-colombia-frena-su-racha-alcista-y-cae-este-miercoles-18-de-noviembre-este-es-su-precio-oficial-506559).
+El equipo no cobra (es un proyecto del bootcamp), pero para el pitch se estima cuánto costaría producir el juego en Colombia con un equipo contratado, durante 3 semanas (0,75 meses). Tasa de cambio usada: COP 3.309,55 por dólar ([TRM del 18 de noviembre de 2026, Portafolio](https://www.portafolio.co/economia/finanzas/dolar-en-colombia-frena-su-racha-alcista-y-cae-este-miercoles-18-de-noviembre-este-es-su-precio-oficial-506559)).
 
 ### Equipo
 
-- **Salarios:** 2 programadores (Sebas y Daniel) a COP 2.812.680 al mes, sueldo promedio de desarrollador junior en Colombia (Indeed, septiembre de 2026: https://co.indeed.com/career/junior-developer/salaries).
-- **Salarios:** 3 perfiles de arte, UI y sonido (Oscar, Laura y Nerlyn) a COP 2.500.000 al mes, honorarios de una oferta real de diseñador gráfico junior (Computrabajo). No encontramos una referencia específica para diseño sonoro junior y usamos la misma.
-- **Carga laboral:** cerca del 52 % sobre el salario por prestaciones, seguridad social y parafiscales (hacecuentas.com, calculadora de prestaciones en Colombia: https://hacecuentas.com/co/calculadora-pcs-prestaciones-sociales-colombia-percent-salario), más el auxilio de transporte de COP 249.095 al mes para salarios de hasta 2 mínimos (salario mínimo 2026: COP 1.750.905, Decreto 1470 de 2025).
-- **Total equipo:** COP 13.125.360 de salarios + 52 % = COP 19.950.547, más auxilios por COP 1.245.475 = COP 21.196.022 al mes. Por 3 semanas: COP 15.897.017.
+- **Salarios:** 2 programadores (Sebas y Daniel) a **COP 2.812.680 al mes**, sueldo promedio de desarrollador junior en Colombia ([Indeed, septiembre de 2026](https://co.indeed.com/career/junior-developer/salaries)).
+- **Salarios:** 3 perfiles de arte, UI y sonido (Oscar, Laura y Nerlyn) a **COP 2.500.000 al mes**, honorarios de una oferta real de diseñador gráfico junior (Computrabajo). No encontramos una referencia específica para diseño sonoro junior y usamos la misma.
+- **Carga laboral:** cerca del 52 % sobre el salario por prestaciones, seguridad social y parafiscales ([hacecuentas.com, calculadora de prestaciones en Colombia](https://hacecuentas.com/co/calculadora-pcs-prestaciones-sociales-colombia-percent-salario)), más el auxilio de conectividad digital de COP 249.095 al mes para salarios de hasta 2 mínimos (como el equipo trabaja remoto, reemplaza al auxilio de transporte y vale lo mismo) (salario mínimo 2026: COP 1.750.905, Decreto 1470 de 2025).
+- **Total equipo:** COP 13.125.360 de salarios + 52 % = COP 19.950.547, más auxilios por COP 1.245.475 = COP 21.196.022 al mes. **Por 3 semanas: COP 15.897.017**.
 
 ### Software y licencias (1 mes)
 
@@ -32,14 +32,14 @@ El equipo no cobra (es un proyecto del bootcamp), pero para el pitch se estima c
 - **Figma:** 2 puestos Professional a US$20 al mes con facturación mensual (US$16 con facturación anual).
 - **ChatGPT:** 1 suscripción Plus a US$20 al mes (https://help.openai.com/en/articles/6950777-what-is-chatgpt-plus).
 - **Gratis:** Blender, GitHub, Trello, Miro e itch.io en sus planes gratuitos: US$0.
-- **Subtotal:** US$105,98 = COP 350.746.
+- **Subtotal: US$105,98 = COP 350.746**.
 
 ### Assets de la Unity Asset Store
 
 - **Flat Kit:** US$39,90 a precio normal (https://assetstore.unity.com/packages/vfx/shaders/flat-kit-toon-shading-and-water-143368).
 - **Senses 3:** US$50 (https://assetstore.unity.com/packages/tools/behavior-ai/senses-3-ai-vision-hearing-smell-system-345466).
-- **Shader de contorno:** precio por confirmar cuando se defina el asset.
-- **Subtotal:** US$89,90 = COP 297.529 (ya comprados por el equipo).
+- **Shader de contorno:** precio por confirmar con Sebas.
+- **Subtotal: US$89,90 = COP 297.529**.
 
 ### Equipos y servicios (estimación propia)
 
@@ -50,7 +50,7 @@ El equipo no cobra (es un proyecto del bootcamp), pero para el pitch se estima c
 
 - **Subtotal del proyecto:** COP 17.411.959.
 - **Imprevistos:** 10 %: COP 1.741.196.
-- **Costo estimado de producción:** cerca de COP 19,2 millones (unos US$5.790) por 3 semanas de producción. El gasto real del equipo hasta ahora son los paquetes de la Asset Store y las suscripciones personales.
+- **Costo estimado de producción:** cerca de **COP 19,2 millones (unos US$5.790)** por 3 semanas de producción. El gasto real del equipo hasta ahora son los paquetes de la Asset Store y las suscripciones personales.
 
 ## Plataformas
 
@@ -66,7 +66,7 @@ PC con teclado y mouse, jugando en el navegador (WebGL) desde itch.io. Requisito
 #### Daniel Esteban Ardila Alzate
 
 - Programador.
-- Ataques, vida y combate, reinicio de sala, comportamiento y pelea de enemigos, gestor de escenas (entrada y salida de escena).
+- Ataques, vida y combate, game over, comportamiento y pelea de enemigos, gestor de escenas (entrada y salida de escena).
 
 #### Oscar Alberto Pinedo Camacho
 
@@ -81,4 +81,4 @@ PC con teclado y mouse, jugando en el navegador (WebGL) desde itch.io. Requisito
 #### Laura
 
 - UI/UX.
-- HUD y menús, prueba de estilo y montaje de escenas junto a Oscar.
+- HUD y menús, sistema de diseño y montaje de escenas junto a Oscar.

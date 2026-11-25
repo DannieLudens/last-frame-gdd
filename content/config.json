@@ -6,8 +6,8 @@
   },
   "siglas": "GDD",
   "pitch": {
-    "es": "Eres una caricatura de los años 80, olvidada tras la cancelación de su show y atrapada en un estudio abandonado que ahora dominan caricaturas generadas por IA. Escóndete en la sombra, defiéndete con tu pluma de tinta y tu corrector, y recupera en cada set la cinta con uno de tus recuerdos antes de que El Reemplazo, tu copia perfecta, te borre para siempre.",
-    "en": "You are a forgotten 1980s cartoon, left behind when your show was cancelled and trapped in an abandoned studio now ruled by AI-generated cartoons. Hide in the shadows, fight back with your ink pen and your correction fluid, and recover in every set the tape that holds one of your memories before The Replacement, your perfect copy, erases you for good."
+    "es": "Eres una caricatura de los años 80, olvidada tras la cancelación de su show y atrapada en la sala cerrada de un estudio que ahora dominan caricaturas generadas por IA. Escóndete en la sombra, defiéndete con tu pluma de tinta y tu corrector, y recupera en cada set la cinta con uno de tus recuerdos antes de que El Reemplazo, tu copia perfecta, te borre para siempre y quedes en el olvido.",
+    "en": "You are a forgotten 1980s cartoon, left behind when your show was cancelled and trapped in the closed room of a studio now ruled by AI-generated cartoons. Hide in the shadows, fight back with your ink pen and your correction fluid, and recover in every set the tape that holds one of your memories before The Replacement, your perfect copy, erases you for good and you fall into oblivion."
   },
   "estudio": "The Strokes",
   "version": "0.1",
@@ -15,15 +15,14 @@
   "equipo": [
     "Juan Sebastián Gravini Contreras",
     "Oscar Alberto Pinedo Camacho",
-    "Laura",
+    "Laura Muñoz Perez",
     "Nerlyn Juliet Carlosama Molina",
     "Daniel Esteban Ardila Alzate"
   ],
-  "logo": "",
+  "logo": "assets/img/logo/last-frame-logo.svg",
   "idiomaBase": "es",
   "idiomas": [
-    "es",
-    "en"
+    "es"
   ],
   "pdf": {
     "es": "",
