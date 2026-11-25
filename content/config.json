@@ -22,7 +22,8 @@
   "logo": "assets/img/logo/logo-equipo.png",
   "idiomaBase": "es",
   "idiomas": [
-    "es"
+    "es",
+    "en"
   ],
   "pdf": {
     "es": "",

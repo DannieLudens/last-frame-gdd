@@ -685,6 +685,8 @@
       state.config = await res.json();
       state.lang = pickLanguage(state.config.idiomas, state.config.idiomaBase);
       copyListener();
+      const barH = () => document.documentElement.style.setProperty('--alto-barra', $('.barra').offsetHeight + 'px'); // the cover fills exactly the screen below the bar
+      barH(); window.addEventListener('resize', barH);
       $('#btn-descargar').addEventListener('click', e => { e.stopPropagation(); toggleDownloads(); });
       document.addEventListener('click', e => { if (!e.target.closest('#descargas')) toggleDownloads(false); });
       $('#btn-menu').addEventListener('click', () => toggleMenu());

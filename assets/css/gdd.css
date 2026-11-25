@@ -665,3 +665,28 @@ body::before {
   text-wrap: balance;
 }
 .portada__meta strong { color: var(--lf-marfil); }
+
+/* ---------- Portada a pantalla completa: todo lo del aro cabe y respira ----------
+   Tamanos atados a la altura de la ventana (vh) para que en 1366x657 y en 1920x930 quede completa. */
+@media (min-width: 561px) {
+  .portada {
+    min-height: calc(100svh - var(--alto-barra, 64px));
+    gap: clamp(0.35rem, 1.5vh, 1rem);
+    padding-block: clamp(2.6rem, 8vh, 5rem);
+    padding-inline: clamp(3rem, 12vw, 12rem);
+  }
+  .portada__etiqueta { font-size: clamp(0.85rem, 1.7vh, 1rem); margin: 0; }
+  .portada__titulo--logo { margin: 0; }
+  .portada__titulo--logo img { width: min(500px, 70vw, 46vh); }
+  .portada__pitch {
+    font-size: clamp(0.95rem, 1.85vh, 1.22rem); line-height: 1.5;
+    max-width: min(68ch, 100%); text-wrap: balance;
+  }
+  .portada__meta {
+    flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 0.15rem 1.4rem;
+    max-width: 64ch; margin: 0; font-size: clamp(0.8rem, 1.55vh, 0.95rem); line-height: 1.45;
+  }
+  .portada__meta li:nth-child(2) { order: 3; flex-basis: 100%; } /* Estudio y fecha en una linea, el equipo debajo */
+  .portada__jugar { margin-top: clamp(0.2rem, 1vh, 0.6rem); padding: 0.7rem 1.7rem 0.85rem; font-size: clamp(0.95rem, 1.8vh, 1.1rem); }
+}
+.portada__titulo--logo { margin-bottom: clamp(0.3rem, 1.4vh, 0.9rem) !important; }
