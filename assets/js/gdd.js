@@ -34,6 +34,8 @@
       imgPendiente: 'Imagen pendiente',
       keyArt: 'Key art pendiente: --portada-imagen en tokens.css',
       diagramaCargando: 'Dibujando diagrama…',
+      ampliar: 'Ver en grande',
+      cerrar: 'Cerrar (Esc)',
       error: 'No se pudo cargar el GDD. Si lo abriste como archivo, ábrelo con un servidor local (ver README).',
       avisos: { rubrica: 'Rúbrica', nota: 'Nota', ia: 'Uso de IA', alerta: 'Atención' },
       menu: 'Abrir índice',
@@ -67,6 +69,8 @@
       imgPendiente: 'Image pending',
       keyArt: 'Key art pending: --portada-imagen in tokens.css',
       diagramaCargando: 'Drawing diagram…',
+      ampliar: 'View larger',
+      cerrar: 'Close (Esc)',
       error: 'The GDD could not be loaded. If you opened it as a file, use a local server (see README).',
       avisos: { rubrica: 'Rubric', nota: 'Note', ia: 'AI use', alerta: 'Warning' },
       menu: 'Open contents',
@@ -278,6 +282,111 @@
     });
   }
 
+  // ---- Image viewer: click an image or a diagram to see it large over the page ----
+  const ZOOM_SELECTOR = '.seccion .contenido img, .diagrama[data-listo]';
+  const viewer = { box: null, origin: null };
+
+  // Images inside links or before/after sliders keep their own behavior
+  function canZoom(el) {
+    if (!el || el.closest('a') || el.closest('.antes-despues')) return false;
+    return el.tagName !== 'IMG' || !(el.complete && el.naturalWidth === 0); // skip broken images
+  }
+
+  // Makes images and diagrams reachable with the keyboard and shows the zoom cursor
+  function markZoomable(root) {
+    root.querySelectorAll(ZOOM_SELECTOR).forEach(el => {
+      if (el.dataset.ampliable || !canZoom(el)) return;
+      el.dataset.ampliable = '1';
+      el.tabIndex = 0;
+      el.setAttribute('role', 'button');
+      el.setAttribute('aria-label', el.alt ? `${t().ampliar}: ${el.alt}` : t().ampliar);
+    });
+  }
+
+  // Creates the overlay once
+  function buildViewer() {
+    const box = document.createElement('div');
+    box.className = 'visor no-imprimir';
+    box.hidden = true;
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-modal', 'true');
+    box.innerHTML = '<button type="button" class="visor__cerrar"><span aria-hidden="true">✕</span></button>' +
+      '<figure class="visor__figura"><div class="visor__lienzo"></div><figcaption class="visor__pie"></figcaption></figure>';
+    box.addEventListener('click', e => { if (!e.target.closest('.visor__pie')) closeViewer(); }); // backdrop, image or button
+    document.body.appendChild(box);
+    viewer.box = box;
+  }
+
+  // Shows a copy of the image or diagram, with its caption
+  function openViewer(el) {
+    if (!viewer.box) buildViewer();
+    const box = viewer.box;
+    const canvas = box.querySelector('.visor__lienzo');
+    canvas.innerHTML = '';
+    if (el.tagName === 'IMG') {
+      const img = document.createElement('img');
+      img.src = el.currentSrc || el.src;
+      img.alt = el.alt;
+      img.addEventListener('load', () => fitImage(img));
+      canvas.appendChild(img);
+    } else {
+      const svg = el.querySelector('svg');
+      if (!svg) return; // diagram failed to draw
+      const copy = svg.cloneNode(true);
+      ['style', 'width', 'height'].forEach(a => copy.removeAttribute(a)); // let it grow to the screen
+      canvas.appendChild(copy);
+    }
+    const caption = el.closest('figure')?.querySelector('figcaption')?.innerHTML || '';
+    const pie = box.querySelector('.visor__pie');
+    pie.innerHTML = caption;
+    pie.hidden = !caption;
+    box.setAttribute('aria-label', el.alt || t().ampliar);
+    box.querySelector('.visor__cerrar').setAttribute('aria-label', t().cerrar);
+    viewer.origin = el;
+    box.hidden = false;
+    document.body.classList.add('visor-abierto'); // stop the page from scrolling behind
+    box.querySelector('.visor__cerrar').focus();
+  }
+
+  // Grows small images to fill the screen (up to 3x) and shrinks big ones to fit
+  function fitImage(img) {
+    if (!img || !img.naturalWidth) return;
+    const maxW = Math.min(window.innerWidth * 0.94, 1600);
+    const maxH = window.innerHeight - 128; // room for the caption and the close button
+    const scale = Math.min(maxW / img.naturalWidth, maxH / img.naturalHeight, 3);
+    img.style.width = `${Math.round(img.naturalWidth * scale)}px`;
+    img.style.height = `${Math.round(img.naturalHeight * scale)}px`;
+  }
+
+  function closeViewer() {
+    if (!viewer.box || viewer.box.hidden) return;
+    viewer.box.hidden = true;
+    viewer.box.querySelector('.visor__lienzo').innerHTML = '';
+    document.body.classList.remove('visor-abierto');
+    viewer.origin?.focus(); // back to the image that opened it
+    viewer.origin = null;
+  }
+
+  // One listener for every image, including the ones drawn later
+  function setupViewer() {
+    document.addEventListener('click', e => {
+      const el = e.target.closest(ZOOM_SELECTOR);
+      if (el && canZoom(el)) openViewer(el);
+    });
+    window.addEventListener('resize', () => {
+      if (viewer.box && !viewer.box.hidden) fitImage(viewer.box.querySelector('.visor__lienzo img'));
+    });
+    document.addEventListener('keydown', e => {
+      const open = viewer.box && !viewer.box.hidden;
+      if (open && e.key === 'Escape') { e.preventDefault(); closeViewer(); return; }
+      if (open && e.key === 'Tab') { e.preventDefault(); viewer.box.querySelector('.visor__cerrar').focus(); return; } // keep focus inside
+      if (!open && (e.key === 'Enter' || e.key === ' ') && e.target.matches?.(ZOOM_SELECTOR) && canZoom(e.target)) {
+        e.preventDefault();
+        openViewer(e.target);
+      }
+    });
+  }
+
   // Wires the before/after sliders
   function decorateSliders(root) {
     root.querySelectorAll('.antes-despues').forEach(fig => {
@@ -439,6 +548,7 @@
 
     decorateNotices(main);
     decorateImages(main);
+    markZoomable(main);
     decorateSliders(main);
     wrapTables(main);
     renderIndex();
@@ -569,6 +679,7 @@
         box.classList.remove('cargando');
         box.dataset.listo = '1'; // drawn once
       }
+      markZoomable(document); // diagrams can be opened large
     }).catch(err => console.warn('Mermaid no cargó', err));
   }
 
@@ -685,6 +796,7 @@
       state.config = await res.json();
       state.lang = pickLanguage(state.config.idiomas, state.config.idiomaBase);
       copyListener();
+      setupViewer();
       const barH = () => document.documentElement.style.setProperty('--alto-barra', $('.barra').offsetHeight + 'px'); // the cover fills exactly the screen below the bar
       barH(); window.addEventListener('resize', barH);
       $('#btn-descargar').addEventListener('click', e => { e.stopPropagation(); toggleDownloads(); });
