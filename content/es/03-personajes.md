@@ -4,7 +4,7 @@ Fichas de los personajes. Los rasgos salen de la historia y de los bocetos de ar
 
 ## La protagonista
 
-- **Nombre:** por votar en el discord.
+- **Nombre:** Ollie.
 - **Rol:** protagonista jugable.
 - **Origen:** estrella de una caricatura de los años 80 que hacía de todo en su show (aventurera, vaquera, detective). Tras la cancelación quedó olvidada en el estudio.
 - **Personalidad:** valiente, rebelde, ingeniosa y un poco nostálgica. Está en guerra con el olvido y con la decisión de reemplazarla por animaciones perfectas pero sin alma.

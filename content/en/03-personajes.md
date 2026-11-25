@@ -4,7 +4,7 @@ Character sheets. The traits come from the story and the art sketches; whatever 
 
 ## The protagonist
 
-- **Name:** to be voted on Discord.
+- **Name:** Ollie.
 - **Role:** playable protagonist.
 - **Origin:** star of a 1980s cartoon who did everything in her show (adventurer, cowgirl, detective). After it was cancelled, she was left forgotten in the studio.
 - **Personality:** brave, rebellious, clever and a bit nostalgic. She is at war with oblivion and with the decision to replace her with perfect but soulless animations.
