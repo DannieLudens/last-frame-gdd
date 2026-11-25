@@ -4,7 +4,7 @@ The full detail lives in the project's design system. This is the summary an out
 
 ## Style
 
-The art style chosen for the game is the classic 1980s cartoon. We bring this look to the main character, the props and the level design as a whole, so the TV and animation studio feels set in the classic era when handmade TV cartoons, made with a lot of love and intention, were at their peak.
+The art style chosen for the game is the classic 1980s cartoon. We bring this look to Ollie, the props and the level design as a whole, so the TV and animation studio feels set in the classic era when handmade TV cartoons, made with a lot of love and intention, were at their peak.
 
 Characters and 3D props are modeled in Blender and shown in Unity with Flat Kit, which provides the toon shading and the cartoon outline, so everything looks drawn.
 
@@ -18,8 +18,8 @@ assets/img/arte/boceto-distribucion-set.png | Layout sketch of a set with props
 Protagonist palette option B. It is the same palette this GDD uses (`assets/css/tokens.css`).
 
 ```colores
-Slate blue | #687589 | Protagonist's jacket
-Muted brick | #A65F45 | Protagonist's pants
+Slate blue | #687589 | Ollie's jacket
+Muted brick | #A65F45 | Ollie's pants
 Walnut | #65483D | Floor, drawing desks and boxes
 Dark plum | #302A38 | Shadows under furniture and stealth zones
 Smoke green | #66736A | Painted backdrops at the back of the studio
@@ -28,7 +28,7 @@ Ivory | #F1DFC0 | Title, counters and the Options button border
 Mustard | #D5A34F | Play button and active selection
 Light brass | #E2BD73 | Collectible tape and its HUD icon
 Amber | #D99C52 | Translucent surveillance cone
-Muted red | #D26361 | Camera light when it detects the protagonist
+Muted red | #D26361 | Camera light when it detects Ollie
 Eggplant | #59405C | Pen ink, trail and ammo icon with an ivory border
 ```
 
@@ -55,7 +55,7 @@ A proposal based on the current designs; to be confirmed with Oscar and Laura.
 
 | Category | Base shape | What it communicates |
 | --- | --- | --- |
-| Protagonist | Curves and rounded shapes, loose hair, pencil lines | Approachable and alive, handmade |
+| Ollie | Curves and rounded shapes, loose hair, pencil lines | Approachable and alive, handmade |
 | AI enemies | Straight, symmetrical silhouettes, perfect lines | Cold, generic, soulless |
 | Danger | Vision and camera cones, triangles | An area to stay out of |
 | Rewards | Circles: tape reel, inkwell, heart | Something good to pick up |
@@ -83,7 +83,7 @@ assets/img/ui/menu-boceto-a-propuesta.png | From the paper sketch to the main me
 
 How the project's assets are made and named.
 
-- **Tools:** Photoshop (protagonist, textures, 2D props, UI), Figma (UI, mockups and design system), Blender (3D models of characters and props), ChatGPT (exploration images and some assets) and Claude (help writing documentation and code).
+- **Tools:** Photoshop (Ollie, textures, 2D props, UI), Figma (UI, mockups and design system), Blender (3D models of characters and props), ChatGPT (exploration images and some assets) and Claude (help writing documentation and code).
 - **Unity Asset Store packages:** Senses 3 (enemy perception) and Flat Kit (toon shading and cartoon outline for the strokes of 3D objects).
 - **Formats and sizes:** textures and illustrations in PNG (tentatively 512, 1024 or 2048 px per side); UI sprites in PNG with transparency (ink-blot buttons as 9-slice); models in FBX (1 unit = 1 meter, pivot at the base); SFX in WAV and music in OGG; fonts in TTF or OTF (Caprasimo and DynaPuff).
 - **Names:** a prefix by type and the name in PascalCase inside the Unity assets:
@@ -103,11 +103,11 @@ How the project's assets are made and named.
 
 ### Characters
 
-- Initial sketch of the main character: we used the classic cartoon style for this classic cartoon adventurer and gave her a rebel-girl outfit to show she is at war with AI-generated images. She also carries weapons and ammo to draw and undraw her enemies at will.
+- Initial sketch of Ollie: we used the classic cartoon style for this classic cartoon adventurer and gave her a rebel-girl outfit to show she is at war with AI-generated images. She also carries weapons and ammo to draw and undraw her enemies at will.
 - Initial design of the AI-made enemies: their look is based on the generic AI-designed characters seen in ads today, and they wear coworker and business clothes as a nod to progress and productivity. This is a reference: the final enemy design is still open.
 - The Replacement (final boss)
 
-A version of the protagonist created by AI to take her place in the studio. It keeps her appearance and holds a fountain pen like hers.
+A version of Ollie created by AI to take her place in the studio. It keeps her appearance and holds a fountain pen like hers.
 
 ### Environment
 
@@ -130,7 +130,7 @@ assets/img/arte/props-camara-cintas.png | Props: film camera and reels
 - Promotional poster for the game.
 - Main cover image.
 - Banner image.
-- Content of the protagonist's memories.
+- Content of Ollie's memories.
 
 ### Pieces for the release
 

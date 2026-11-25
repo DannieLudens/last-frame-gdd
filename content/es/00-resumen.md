@@ -7,7 +7,7 @@ Eres una caricatura de los años 80, olvidada tras la cancelación de su show y 
 ## Pilares de diseño
 
 ```pilares
-Alma vs. Algoritmo | El núcleo del juego es el contraste. La protagonista y el entorno están hechos a mano (líneas orgánicas, trazos a lápiz, colores disparejos, algunos bocetos terminados y otros a medio hacer). Los enemigos son animaciones de IA: perfectos, fríos, genéricos, brillantes y sin alma. El jugador debe sentir la dignidad del arte original frente a la producción en masa.
+Alma vs. Algoritmo | El núcleo del juego es el contraste. Ollie y el entorno están hechos a mano (líneas orgánicas, trazos a lápiz, colores disparejos, algunos bocetos terminados y otros a medio hacer). Los enemigos son animaciones de IA: perfectos, fríos, genéricos, brillantes y sin alma. El jugador debe sentir la dignidad del arte original frente a la producción en masa.
 Supervivencia por Sigilo (Gameplay) | No eres un héroe de acción; eres un toon inacabado. El combate directo es castigado. El jugador debe usar la oscuridad, agacharse para no hacer ruido y esconderse detrás de los decorados para evitar ser detectado por las cámaras y las patrullas de IA.
 Sistema de ataque | Tienes dos opciones de ataque, un ataque a distancia con la pluma tintera el cual puedes usar para deshacerte de los enemigos lejanos y romper la formación de los enemigos, así mismo, tienes un ataque cuerpo a cuerpo con el corrector de papel, el cual usas para borrar a tus enemigos.
 ```
@@ -16,21 +16,21 @@ Sistema de ataque | Tienes dos opciones de ataque, un ataque a distancia con la 
 
 ### Descripción breve
 
-Last Frame es un juego de sigilo en 3D con cámara en picado (desde arriba y en ángulo, no del todo cenital) y estética de caricatura clásica de los años 80. La jugadora controla a una caricatura olvidada: la estrella de un show cancelado que despierta en la sala de los clásicos de un estudio de animación, cerrada desde hace años y ahora vigilada por caricaturas generadas por IA, sonrientes, perfectas e impresas en papel.
+Last Frame es un juego de sigilo en 3D con cámara en picado (desde arriba y en ángulo, no del todo cenital) y estética de caricatura clásica de los años 80. La jugadora controla a Ollie, una caricatura olvidada: la estrella de un show cancelado que despierta en la sala de los clásicos de un estudio de animación, cerrada desde hace años y ahora vigilada por caricaturas generadas por IA, sonrientes, perfectas e impresas en papel.
 
-La partida recorre 5 sets del estudio. El primero enseña las mecánicas, los tres del medio aparecen en orden aleatorio y el último es el enfrentamiento con El Reemplazo. En cada set la protagonista busca una cinta con uno de sus recuerdos y la puerta de salida, sin ser borrada. Se esconde en la oscuridad, evita el ruido y, cuando no hay otra opción, ataca con su pluma de tinta o con su corrector líquido.
+La partida recorre 5 sets del estudio. El primero enseña las mecánicas, los tres del medio aparecen en orden aleatorio y el último es el enfrentamiento con El Reemplazo. En cada set Ollie busca una cinta con uno de sus recuerdos y la puerta de salida, sin ser borrada. Se esconde en la oscuridad, evita el ruido y, cuando no hay otra opción, ataca con su pluma de tinta o con su corrector líquido.
 
 ### Descripción detallada
 
-Visto desde el tamaño de la protagonista, el estudio es inmenso: cajas de props, cámaras antiguas, mesas de animación y hojas de papel son paredes y escondites. Cada set es una sala de grabación distinta. El set 1 funciona como tutorial; al cruzar su puerta, el juego elige al azar el orden de los sets 2, 3 y 4, así que hay 6 recorridos posibles. El set 5 es el set de ideas potenciales, donde espera El Reemplazo.
+Visto desde el tamaño de Ollie, el estudio es inmenso: cajas de props, cámaras antiguas, mesas de animación y hojas de papel son paredes y escondites. Cada set es una sala de grabación distinta. El set 1 funciona como tutorial; al cruzar su puerta, el juego elige al azar el orden de los sets 2, 3 y 4, así que hay 6 recorridos posibles. El set 5 es el set de ideas potenciales, donde espera El Reemplazo.
 
-Las caricaturas de IA patrullan, oyen y vigilan. Si ven a la protagonista, la persiguen para borrarla con su borrador. Cada golpe le quita uno de sus 3 corazones y la hace sangrar tinta: durante unos 6 segundos deja un rastro de gotas que los enemigos pueden seguir, y esconderse no lo borra. Si pierde los 3 corazones, la borran: game over y vuelta al menú principal. Además, cada set tiene un tiempo límite antes de que la puerta quede sellada. Las cámaras del estudio barren el espacio y llaman a un enemigo con una alarma. Los reflectores exponen y la oscuridad protege.
+Las caricaturas de IA patrullan, oyen y vigilan. Si ven a Ollie, la persiguen para borrarla con su borrador. Cada golpe le quita uno de sus 3 corazones y la hace sangrar tinta: durante unos 6 segundos deja un rastro de gotas que los enemigos pueden seguir, y esconderse no lo borra. Si pierde los 3 corazones, la borran: game over y vuelta al menú principal. Además, cada set tiene un tiempo límite antes de que la puerta quede sellada. Las cámaras del estudio barren el espacio y llaman a un enemigo con una alarma. Los reflectores exponen y la oscuridad protege.
 
-La protagonista puede caminar sin hacer ruido, correr (rápido pero ruidoso) o agacharse (lento y casi invisible). Su arma principal es una pluma estilográfica de su tamaño, que lanza gotas de tinta en arco hacia el cursor; con Q la cambia por un corrector líquido para atacar cuerpo a cuerpo. La tinta es escasa y se conserva de un set a otro. Los enemigos son de papel: la tinta los mancha y los disuelve.
+Ollie puede caminar sin hacer ruido, correr (rápido pero ruidoso) o agacharse (lento y casi invisible). Su arma principal es una pluma estilográfica de su tamaño, que lanza gotas de tinta en arco hacia el cursor; con Q la cambia por un corrector líquido para atacar cuerpo a cuerpo. La tinta es escasa y se conserva de un set a otro. Los enemigos son de papel: la tinta los mancha y los disuelve.
 
-El contraste es el corazón visual del juego: la protagonista y el estudio tienen trazo a lápiz, colores cálidos y desparejos; los enemigos son brillantes, simétricos y genéricos. La sensación buscada es tensión silenciosa con el humor de la caricatura clásica.
+El contraste es el corazón visual del juego: Ollie y el estudio tienen trazo a lápiz, colores cálidos y desparejos; los enemigos son brillantes, simétricos y genéricos. La sensación buscada es tensión silenciosa con el humor de la caricatura clásica.
 
-**Primeros dos minutos:** tras elegir Jugar, una cinta vieja muestra el último cuadro en que la protagonista salió al aire. Despierta en el set 1, a oscuras. Letreros pintados a mano le enseñan a moverse, agacharse y esconderse; una caricatura de IA pasa sonriendo con su borrador y la jugadora aprende a esperar en la sombra. Encuentra su pluma, prueba un disparo de tinta contra una lata para distraer, cambia al corrector con Q, recoge su primera cinta (un recuerdo corto) y cruza la puerta hacia el siguiente set.
+**Primeros dos minutos:** tras elegir Jugar, una cinta vieja muestra el último cuadro en que Ollie salió al aire. Despierta en el set 1, a oscuras. Letreros pintados a mano le enseñan a moverse, agacharse y esconderse; una caricatura de IA pasa sonriendo con su borrador y la jugadora aprende a esperar en la sombra. Encuentra su pluma, prueba un disparo de tinta contra una lata para distraer, cambia al corrector con Q, recoge su primera cinta (un recuerdo corto) y cruza la puerta hacia el siguiente set.
 
 ## Temática, ambientación y género
 
@@ -73,8 +73,8 @@ Obras que inspiran el tono, el estilo y las mecánicas. En el Miro también est�
 
 ## ¿Qué lo hace diferente?
 
-- El debate entre arte hecho a mano y contenido generado por IA se vuelve regla de juego: la protagonista se esconde de enemigos perfectos y genéricos.
-- Sigilo para todo público: no hay sangre; la tinta mancha y disuelve a los enemigos de papel, y la protagonista sangra tinta cuando la golpean.
+- El debate entre arte hecho a mano y contenido generado por IA se vuelve regla de juego: Ollie se esconde de enemigos perfectos y genéricos.
+- Sigilo para todo público: no hay sangre; la tinta mancha y disuelve a los enemigos de papel, y Ollie sangra tinta cuando la golpean.
 - Cada partida cambia: los sets 2 a 4 salen en orden aleatorio, y cada cinta cuenta un recuerdo que se entiende solo.
 
 ## Público objetivo

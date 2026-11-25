@@ -1,10 +1,10 @@
 # Conveyance
 
-How the player gets information. The general rule: anything hand-drawn (pencil lines, paper) belongs to the protagonist, and anything shiny and perfect belongs to the enemy.
+How the player gets information. The general rule: anything hand-drawn (pencil lines, paper) belongs to Ollie, and anything shiny and perfect belongs to the enemy.
 
 ## Visibility
 
-In the shadows, the protagonist looks muted; under a spotlight, she gets a bright outline. An eye icon in the HUD opens wider the more visible she is.
+In the shadows, Ollie looks muted; under a spotlight, she gets a bright outline. An eye icon in the HUD opens wider the more visible she is.
 
 ## Enemy alert
 
@@ -16,7 +16,7 @@ Each noise draws scribble waves on the floor, as big as its radius. This way the
 
 ## Hit and ink trail
 
-When she gets hit, a heart in the HUD breaks, the screen shakes for a moment and the protagonist splashes ink. While she bleeds, she moves slower and leaves drops of ink in her palette colors on the floor, which dry in about 6 seconds. When the trail dries, she stops bleeding; the HUD only shows the empty heart.
+When she gets hit, a heart in the HUD breaks, the screen shakes for a moment and Ollie splashes ink. While she bleeds, she moves slower and leaves drops of ink in her palette colors on the floor, which dry in about 6 seconds. When the trail dries, she stops bleeding; the HUD only shows the empty heart.
 
 ## Cameras
 

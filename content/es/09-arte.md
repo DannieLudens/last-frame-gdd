@@ -4,7 +4,7 @@ El detalle completo va en el sistema de diseño del proyecto. Aquí va el resume
 
 ## Estilo
 
-El estilo gráfico escogido para desarrollar nuestro videojuego es el cartoon clásico, tipo caricatura de los años 80, nos enfocamos en integrar esta estética para el personaje principal, los props, y el diseño de nivel en general, haciendo que el estudio de televisión y animación esté ambientado en una época clásica en la cual se produjo el auge de las caricaturas en la televisión hechas a mano y con mucho amor e intención.
+El estilo gráfico escogido para desarrollar nuestro videojuego es el cartoon clásico, tipo caricatura de los años 80, nos enfocamos en integrar esta estética para Ollie, los props, y el diseño de nivel en general, haciendo que el estudio de televisión y animación esté ambientado en una época clásica en la cual se produjo el auge de las caricaturas en la televisión hechas a mano y con mucho amor e intención.
 
 Los personajes y props 3D se modelan en Blender y se ven en Unity con Flat Kit, que da el sombreado toon y el contorno tipo caricatura, para que todo parezca dibujado.
 
@@ -18,8 +18,8 @@ assets/img/arte/boceto-distribucion-set.png | Boceto de distribución de un set 
 Paleta opción protagonista B. Es la misma que usa este GDD (`assets/css/tokens.css`).
 
 ```colores
-Azul pizarra | #687589 | Chaqueta de la protagonista
-Ladrillo apagado | #A65F45 | Pantalón de la protagonista
+Azul pizarra | #687589 | Chaqueta de Ollie
+Ladrillo apagado | #A65F45 | Pantalón de Ollie
 Nogal | #65483D | Piso, mesas de dibujo y cajas
 Ciruela oscura | #302A38 | Sombras bajo los muebles y zonas de sigilo
 Verde humo | #66736A | Decorados pintados al fondo del estudio
@@ -28,7 +28,7 @@ Marfil | #F1DFC0 | Título, contadores y borde del botón Opciones
 Mostaza | #D5A34F | Botón Jugar y selección activa
 Latón claro | #E2BD73 | Cinta coleccionable y su ícono en el HUD
 Ámbar | #D99C52 | Cono de vigilancia translúcido
-Rojo apagado | #D26361 | Luz de la cámara cuando detecta a la protagonista
+Rojo apagado | #D26361 | Luz de la cámara cuando detecta a Ollie
 Berenjena | #59405C | Tinta de la pluma, rastro e ícono de munición con borde marfil
 ```
 
@@ -55,7 +55,7 @@ Propuesta a partir de los diseños actuales; se confirma con Oscar y Laura.
 
 | Categoría | Forma base | Lo que comunica |
 | --- | --- | --- |
-| Protagonista | Curvas y formas redondeadas, cabello suelto, trazo de lápiz | Cercana y viva, hecha a mano |
+| Ollie | Curvas y formas redondeadas, cabello suelto, trazo de lápiz | Cercana y viva, hecha a mano |
 | Enemigos de IA | Siluetas rectas y simétricas, líneas perfectas | Fríos, genéricos, sin alma |
 | Peligro | Conos de visión y de cámara, triángulos | Zona que no se debe pisar |
 | Recompensas | Círculos: carrete de la cinta, tintero, corazón | Algo bueno para recoger |
@@ -83,7 +83,7 @@ assets/img/ui/menu-boceto-a-propuesta.png | Del boceto en papel a la propuesta d
 
 Cómo se producen y se nombran los assets del proyecto.
 
-- **Herramientas:** Photoshop (protagonista, texturas, props 2D, UI), Figma (UI, mockups y sistema de diseño), Blender (modelos 3D de personajes y props), ChatGPT (imágenes de exploración y algunos assets) y Claude (apoyo en redacción de documentación y código).
+- **Herramientas:** Photoshop (Ollie, texturas, props 2D, UI), Figma (UI, mockups y sistema de diseño), Blender (modelos 3D de personajes y props), ChatGPT (imágenes de exploración y algunos assets) y Claude (apoyo en redacción de documentación y código).
 - **Paquetes de la Unity Asset Store:** Senses 3 (percepción de enemigos), Flat Kit (sombreado toon y contorno tipo caricatura para el trazo de los objetos 3D).
 - **Formatos y tamaños:** texturas e ilustraciones en PNG (tentativa de 512, 1024 o 2048 px de lado); sprites de UI en PNG con transparencia (botones mancha en 9-slice); modelos en FBX (1 unidad = 1 metro, pivote en la base); SFX en WAV y música en OGG; fuentes TTF u OTF (Caprasimo y DynaPuff).
 - **Nombres:** prefijo por tipo y nombre dentro de los assets de unity en PascalCase:
@@ -103,11 +103,11 @@ Cómo se producen y se nombran los assets del proyecto.
 
 ### Personajes
 
-- Boceto inicial del personaje principal, utilizamos el estilo cartoon clásico para el diseño de está aventurera de caricatura clásica, añadido a esto, incluimos ropa de chica rebelde para indicar que está en guerra con las imágenes generadas por inteligencia artificial, finalmente, el personaje tiene armas y municiones para dibujar y desdibujar a sus enemigos a su antojo.
+- Boceto inicial de Ollie, utilizamos el estilo cartoon clásico para el diseño de está aventurera de caricatura clásica, añadido a esto, incluimos ropa de chica rebelde para indicar que está en guerra con las imágenes generadas por inteligencia artificial, finalmente, el personaje tiene armas y municiones para dibujar y desdibujar a sus enemigos a su antojo.
 - Diseño inicial de los enemigos hechos por la IA, el concepto gráfico de estos personajes se basa en los personajes genéricos diseñados por la IA que se pueden ver hoy en día en anuncios publicitarios, además tienen vestimenta de coworkers y empresarios porque hacen referencia al progreso y la productividad. Es una referencia: el diseño final de los enemigos está por definir.
 - El Reemplazo (Jefe final)
 
-Una versión de la protagonista creada por IA para ocupar su lugar en el estudio. Conserva su apariencia y empuña una pluma estilográfica como la suya.
+Una versión de Ollie creada por IA para ocupar su lugar en el estudio. Conserva su apariencia y empuña una pluma estilográfica como la suya.
 
 ### Entorno
 
@@ -130,7 +130,7 @@ assets/img/arte/props-camara-cintas.png | Props: cámara de cine y cintas
 - Poster promocional del videojuego.
 - Imagen principal del cover.
 - Imagen del banner.
-- Contenido de las memorias de la protagonista.
+- Contenido de las memorias de Ollie.
 
 ### Piezas para la publicación
 

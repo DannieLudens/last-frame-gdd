@@ -6,7 +6,7 @@
 
 **El diseño actual de los enemigos se hizo con IA (ChatGPT) y así se declara.** Esa imagen es la referencia de hoy; el diseño final está por definir.
 
-Los demás assets (protagonista, entorno, props, UI y logo) los hace el equipo a mano en Photoshop, Figma y Blender.
+Los demás assets (Ollie, entorno, props, UI y logo) los hace el equipo a mano en Photoshop, Figma y Blender.
 
 La IA sí se usa como herramienta del proceso:
 

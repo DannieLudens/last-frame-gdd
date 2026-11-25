@@ -43,7 +43,7 @@ HUD mínimo:
 
 #### Combate
 
-- La protagonista tiene 3 corazones como máximo.
+- Ollie tiene 3 corazones como máximo.
 - Cada golpe de un enemigo le quita un corazón y la hace sangrar tinta durante unos 6 segundos. Con 0 corazones es borrada y es game over: se vuelve al menú principal.
 - El ataque cuerpo a cuerpo (corrector) elimina en silencio a un enemigo que no la ha visto; si ya la vio, necesita dos golpes.
 - El ataque a distancia (pluma) consume tinta, que es muy limitada. La munición no se reinicia: se conserva de un set a otro.
@@ -77,7 +77,7 @@ Unity 6. Es el motor del bootcamp y el que el equipo conoce; tiene NavMesh para 
 
 **Movimiento:** WASD
 
-- Mueve a la protagonista en las cuatro direcciones. Caminar no produce ruido.
+- Mueve a Ollie en las cuatro direcciones. Caminar no produce ruido.
 
 **Correr:** Shift (mantener)
 

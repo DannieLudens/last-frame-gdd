@@ -6,7 +6,7 @@
 
 **The current enemy design was made with AI (ChatGPT) and is declared as such.** That image is today's reference; the final design is still open.
 
-All other assets (protagonist, environment, props, UI and logo) are made by hand by the team in Photoshop, Figma and Blender.
+All other assets (Ollie, environment, props, UI and logo) are made by hand by the team in Photoshop, Figma and Blender.
 
 AI is used as a tool in the process:
 

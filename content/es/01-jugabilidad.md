@@ -4,11 +4,11 @@
 
 ### Breve
 
-Un jugador controla a la protagonista desde una cámara en picado. En cada uno de los 5 sets, su meta es encontrar la cinta del set y llegar a la puerta de salida sin ser borrada. Los obstáculos son caricaturas de IA que patrullan con visión, oído y "olfato" (siguen el rastro de tinta cuando ella está herida), cámaras de seguridad y reflectores. Las tácticas son esconderse en la oscuridad, moverse agachada, evitar el ruido, distraer y, cuando hace falta, atacar con la pluma de tinta o con el corrector.
+Un jugador controla a Ollie desde una cámara en picado. En cada uno de los 5 sets, su meta es encontrar la cinta del set y llegar a la puerta de salida sin ser borrada. Los obstáculos son caricaturas de IA que patrullan con visión, oído y "olfato" (siguen el rastro de tinta cuando ella está herida), cámaras de seguridad y reflectores. Las tácticas son esconderse en la oscuridad, moverse agachada, evitar el ruido, distraer y, cuando hace falta, atacar con la pluma de tinta o con el corrector.
 
 ### Detallado
 
-Cada set es un laberinto de props a escala gigante. Las caricaturas de IA siguen rutas de patrulla y tienen tres estados: patrulla, investigar (cuando oyen un ruido, ven algo raro o encuentran un rastro de tinta) y persecución (cuando la ven). Si un enemigo golpea a la protagonista (la jugadora), ella pierde un corazón de 3 y sangra tinta: durante unos 6 segundos deja un rastro que los enemigos pueden seguir, aunque se esconda. Sin corazones, la borran y es game over.
+Cada set es un laberinto de props a escala gigante. Las caricaturas de IA siguen rutas de patrulla y tienen tres estados: patrulla, investigar (cuando oyen un ruido, ven algo raro o encuentran un rastro de tinta) y persecución (cuando la ven). Si un enemigo golpea a Ollie, ella pierde un corazón de 3 y sangra tinta: durante unos 6 segundos deja un rastro que los enemigos pueden seguir, aunque se esconda. Sin corazones, la borran y es game over.
 
 **Un minuto de juego:** la jugadora espera agachada detrás de una caja mientras un enemigo pasa. Ve la cinta del set al otro lado de una zona iluminada por un reflector. Lanza una gota de tinta contra una lata lejana: el enemigo va a investigar el ruido y después mira hacia el lugar del disparo. Aprovecha para cruzar por la sombra, pero pisa virutas de lápiz; otro enemigo llega y la golpea con su borrador con intención de borrarla. Pierde un corazón y empieza a sangrar tinta, y el enemigo sigue su rastro. Cambia al corrector con Q, rodea unas cajas hasta que el rastro se seca, se acerca por la espalda y lo borra de un golpe. Recoge la cinta y aparece un cuadro de su pasado: ella actuando como vaquera en su viejo show.
 
@@ -23,8 +23,8 @@ La tinta es escasa: se conserva de un set a otro y se recarga con tinteros. Elim
 
 - **Ganar un set:** recoger la cinta del set y llegar a la puerta de salida. La puerta solo se abre con la cinta del set actual.
 - **Ganar el juego:** superar los 5 sets y vencer a El Reemplazo en el set de ideas potenciales para volver al aire.
-- **Derrota:** perder los 3 corazones. La protagonista es borrada, todo se vuelve oscuridad y aparece la pantalla de game over; de ahí se vuelve al menú principal. También es derrota si se acaba el tiempo: cada set tiene un límite (propuesta: 5 minutos) antes de que la puerta quede sellada y todo caiga en el olvido.
-- **Resultados:** al vencer, primero se ve una cinemática corta: con todas sus memorias recuperadas, la protagonista es la caricatura más completa del estudio y la sacan al aire en vivo. Después se muestran el tiempo, las veces que la detectaron y las cintas recuperadas (x/5), con una calificación de S, A, B, C, D o E: entre menos veces la detecten, mejor nota. Esto invita a rejugar con otro orden de sets.
+- **Derrota:** perder los 3 corazones. Ollie es borrada, todo se vuelve oscuridad y aparece la pantalla de game over; de ahí se vuelve al menú principal. También es derrota si se acaba el tiempo: cada set tiene un límite (propuesta: 5 minutos) antes de que la puerta quede sellada y todo caiga en el olvido.
+- **Resultados:** al vencer, primero se ve una cinemática corta: con todas sus memorias recuperadas, Ollie es la caricatura más completa del estudio y la sacan al aire en vivo. Después se muestran el tiempo, las veces que la detectaron y las cintas recuperadas (x/5), con una calificación de S, A, B, C, D o E: entre menos veces la detecten, mejor nota. Esto invita a rejugar con otro orden de sets.
 
 ## Ciclo principal (core loop)
 
@@ -58,7 +58,7 @@ Los valores numéricos son iniciales y se ajustan en las pruebas.
 
 #### Detalles
 
-La protagonista camina con WASD sin hacer ruido, corre con Shift (rápido pero ruidoso) y se agacha con Ctrl toggle (lento, silencioso y con menos rango de detección). Las virutas de lápiz del suelo hacen ruido al pisarlas. Cada ruido tiene un radio y los enemigos que estén dentro van a investigar el punto de origen.
+Ollie camina con WASD sin hacer ruido, corre con Shift (rápido pero ruidoso) y se agacha con Ctrl toggle (lento, silencioso y con menos rango de detección). Las virutas de lápiz del suelo hacen ruido al pisarlas. Cada ruido tiene un radio y los enemigos que estén dentro van a investigar el punto de origen.
 
 #### Implementación
 
@@ -68,7 +68,7 @@ PlayerController con CharacterController y el Input System. Correr emite un even
 
 #### Detalles
 
-Las zonas oscuras esconden a la protagonista; los reflectores la exponen y la hacen visible desde más lejos. Ella no tiene luz propia ni la emite.
+Las zonas oscuras esconden a Ollie; los reflectores la exponen y la hacen visible desde más lejos. Ella no tiene luz propia ni la emite.
 
 #### Implementación
 
@@ -78,7 +78,7 @@ Zonas de luz y sombra como volúmenes trigger (LightZone) con un valor de exposi
 
 #### Detalles
 
-La protagonista tiene 3 corazones, visibles en el HUD. Cada golpe de un enemigo le quita uno y la hace sangrar tinta: durante unos 6 segundos deja un rastro de gotas en el suelo que los enemigos pueden seguir. Esconderse no borra el rastro; para perderlos hay que alejarse mientras las gotas se secan o enfrentarlos. Hay corazones repartidos por los sets que devuelven uno. Con 0 corazones, la borran y es game over.
+Ollie tiene 3 corazones, visibles en el HUD. Cada golpe de un enemigo le quita uno y la hace sangrar tinta: durante unos 6 segundos deja un rastro de gotas en el suelo que los enemigos pueden seguir. Esconderse no borra el rastro; para perderlos hay que alejarse mientras las gotas se secan o enfrentarlos. Hay corazones repartidos por los sets que devuelven uno. Con 0 corazones, la borran y es game over.
 
 #### Implementación
 
@@ -88,7 +88,7 @@ PlayerHealth (3 corazones) publica OnHeartsChanged. InkTrail deja un punto de ra
 
 #### Detalles
 
-Caricaturas impresas a laser en papel, siempre sonrientes (sonrisa falsa). Patrullan, investigan ruidos, siguen rastros de tinta y persiguen a la protagonista para golpearla con su borrador. No usan armas de fuego. Como son de papel, la tinta los mancha y los disuelve. Hay mínimo 3 enemigos por set; el número final se ajusta en las pruebas.
+Caricaturas impresas a laser en papel, siempre sonrientes (sonrisa falsa). Patrullan, investigan ruidos, siguen rastros de tinta y persiguen a Ollie para golpearla con su borrador. No usan armas de fuego. Como son de papel, la tinta los mancha y los disuelve. Hay mínimo 3 enemigos por set; el número final se ajusta en las pruebas.
 
 #### Implementación
 
@@ -98,7 +98,7 @@ EnemyAI con NavMeshAgent y una máquina de estados: Patrol, Investigate, Chase y
 
 #### Detalles
 
-La protagonista lleva dos armas y cambia entre ellas con Q. Con la pluma equipada, clic izquierdo lanza una gota de tinta en arco hacia donde apunta el mouse: el primer impacto mancha al enemigo y lo frena, el segundo lo disuelve. La munición es limitada, se conserva de un set a otro y se recarga con tinteros. El disparo hace ruido: el enemigo mira qué fue golpeado y luego investiga de dónde vino. Una gota en una cámara la ciega de 2 a 3 segundos.
+Ollie lleva dos armas y cambia entre ellas con Q. Con la pluma equipada, clic izquierdo lanza una gota de tinta en arco hacia donde apunta el mouse: el primer impacto mancha al enemigo y lo frena, el segundo lo disuelve. La munición es limitada, se conserva de un set a otro y se recarga con tinteros. El disparo hace ruido: el enemigo mira qué fue golpeado y luego investiga de dónde vino. Una gota en una cámara la ciega de 2 a 3 segundos.
 
 Con el corrector equipado, clic izquierdo da un golpe cuerpo a cuerpo. Por la espalda y sin ser vista, elimina al enemigo de un golpe y en silencio. Si el enemigo ya la vio, necesita dos golpes y el enemigo puede responder. Hay un tiempo de espera entre golpes para que no se abuse del ataque.
 
@@ -110,7 +110,7 @@ WeaponSwitcher alterna entre InkPen y CorrectorMelee con la acción Q del Input 
 
 #### Detalles
 
-Barren el área con un cono. Si detectan a la protagonista, suena una alarma que llama al enemigo más cercano. No se destruyen: la tinta las ciega de 2 a 3 segundos, aunque casi siempre conviene esconderse mientras miran a otro lado para no gastar tinta.
+Barren el área con un cono. Si detectan a Ollie, suena una alarma que llama al enemigo más cercano. No se destruyen: la tinta las ciega de 2 a 3 segundos, aunque casi siempre conviene esconderse mientras miran a otro lado para no gastar tinta.
 
 #### Implementación
 
@@ -120,7 +120,7 @@ SecurityCamera rota entre dos ángulos y usa visión de Senses 3. Al detectar, p
 
 #### Detalles
 
-Cada set tiene una sola cinta, el objeto más valioso del juego. Al recogerla se muestra un cuadro del pasado de la protagonista (por ejemplo, actuando como vaquera); si queda tiempo, será una animación corta del recuerdo que se ve en ese momento. El HUD lleva la cuenta de cintas (x/5). La cinta es obligatoria: sin ella, la puerta del set no se abre. La puerta de cada set lleva al siguiente: después del set 1, el orden de los sets 2, 3 y 4 es aleatorio (6 combinaciones), y al final siempre está el set 5 con El Reemplazo.
+Cada set tiene una sola cinta, el objeto más valioso del juego. Al recogerla se muestra un cuadro del pasado de Ollie (por ejemplo, actuando como vaquera); si queda tiempo, será una animación corta del recuerdo que se ve en ese momento. El HUD lleva la cuenta de cintas (x/5). La cinta es obligatoria: sin ella, la puerta del set no se abre. La puerta de cada set lleva al siguiente: después del set 1, el orden de los sets 2, 3 y 4 es aleatorio (6 combinaciones), y al final siempre está el set 5 con El Reemplazo.
 
 #### Implementación
 

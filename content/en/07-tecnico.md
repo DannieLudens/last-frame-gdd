@@ -43,7 +43,7 @@ Minimal HUD:
 
 #### Combat
 
-- The protagonist has up to 3 hearts.
+- Ollie has up to 3 hearts.
 - Each enemy hit takes a heart and makes her bleed ink for about 6 seconds. With 0 hearts she is erased and it is game over: back to the main menu.
 - The melee attack (correction fluid) silently takes out an enemy that hasn't seen her; if it has, it takes two hits.
 - The ranged attack (pen) uses ink, which is very limited. Ammo doesn't reset: it carries over from one set to the next.
@@ -77,7 +77,7 @@ Unity 6. It is the bootcamp's engine and the one the team knows; it has NavMesh 
 
 **Move:** WASD
 
-- Moves the protagonist in four directions. Walking makes no noise.
+- Moves Ollie in four directions. Walking makes no noise.
 
 **Run:** Shift (hold)
 

@@ -1,10 +1,10 @@
 # Comunicación con el jugador
 
-Cómo recibe el jugador la información. La regla general: lo dibujado a mano (trazo de lápiz, papel) pertenece a la protagonista, y lo brillante y perfecto pertenece al enemigo.
+Cómo recibe el jugador la información. La regla general: lo dibujado a mano (trazo de lápiz, papel) pertenece a Ollie, y lo brillante y perfecto pertenece al enemigo.
 
 ## Visibilidad
 
-En la sombra, la protagonista se ve en tonos apagados; bajo un reflector, aparece con contorno brillante. Un ícono de ojo en el HUD se abre a medida que es más visible.
+En la sombra, Ollie se ve en tonos apagados; bajo un reflector, aparece con contorno brillante. Un ícono de ojo en el HUD se abre a medida que es más visible.
 
 ## Alerta de los enemigos
 
@@ -16,7 +16,7 @@ Cada ruido dibuja ondas de garabato en el suelo, del tamaño de su radio. Así l
 
 ## Golpe y rastro de tinta
 
-Al recibir un golpe, un corazón del HUD se rompe, la pantalla se sacude un instante y la protagonista salpica tinta. Mientras sangra, va lento y deja gotas de tinta de su paleta de color en el suelo que se secan en unos 6 segundos. Cuando el rastro se seca, deja de sangrar; el HUD solo muestra el corazón vacío.
+Al recibir un golpe, un corazón del HUD se rompe, la pantalla se sacude un instante y Ollie salpica tinta. Mientras sangra, va lento y deja gotas de tinta de su paleta de color en el suelo que se secan en unos 6 segundos. Cuando el rastro se seca, deja de sangrar; el HUD solo muestra el corazón vacío.
 
 ## Cámaras
 

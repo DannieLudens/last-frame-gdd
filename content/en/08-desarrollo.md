@@ -31,7 +31,7 @@ Main classes, from base to derived. Values are starting points that will be tune
 
 ### Systems and environment
 
-- **InkTrail:** drops trail points every 0.3 s while the protagonist bleeds; each point lasts 6 s.
+- **InkTrail:** drops trail points every 0.3 s while Ollie bleeds; each point lasts 6 s.
 - **LightZone:** trigger with exposure (0 in shadow, 1 under a spotlight).
 - **SecurityCamera:** sweeps between two angles, blindTime 2.5 s; fires OnAlarm.
 - **SetDoor:** each set's exit door; calls GameManager.LoadNextSet().
@@ -81,7 +81,7 @@ How the code is organized. The singleton is a design pattern, not a principle; b
 - **Single responsibility (SOLID):** each script does one thing: PlayerMovement moves, PlayerHealth handles the hearts, InkTrail leaves the trail and AudioManager only plays sound.
 - **Open/closed (SOLID):** Collectible is the base; MemoryTape, InkPickup and HeartPickup extend it without changing it. A new pickup is a new class.
 - **Liskov substitution (SOLID):** BossReplacement derives from EnemyAI and works anywhere an enemy works.
-- **Interface segregation (SOLID):** IDamageable only asks for TakeDamage(); it is implemented by the protagonist, the enemies and The Replacement.
+- **Interface segregation (SOLID):** IDamageable only asks for TakeDamage(); it is implemented by Ollie, the enemies and The Replacement.
 - **Dependency inversion (SOLID):** the UI and audio don't look for the GameManager: they listen to its events (OnHeartsChanged, OnTapeFound, OnAlarm).
 - **Singleton (pattern):** the GameManager is the only instance and stores the state of the run.
 - **Observer (pattern):** C# events connect the GameManager with the UI, audio and doors.
