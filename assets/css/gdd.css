@@ -598,34 +598,60 @@ body::before {
   opacity: .035; /* casi invisible: textura, no distraccion */
 }
 
-/* ---------- Indice plegable (escritorio): riel con numeros que se abre al pasar el mouse ---------- */
+/* ---------- Indice como tira de pelicula (escritorio) ----------
+   Cada cuadro es una seccion. Cerca del cursor los cuadros crecen (--k va de 0 a 1, lo pone filmStrip en gdd.js)
+   y se desplazan hacia el contenido, asi la tira se curva como el dock de macOS. */
 @media (min-width: 961px) {
-  .layout { grid-template-columns: 72px minmax(0, 1fr); max-width: 1240px; }
+  .layout { grid-template-columns: 88px minmax(0, 1fr); max-width: 1240px; }
   .indice {
-    width: 72px; z-index: 18; overflow-x: hidden;
-    padding: var(--space-3) 0.5rem; background: var(--color-dominante);
-    transition: width .2s ease, box-shadow .2s ease;
+    --tira: #17121A; --perfo: color-mix(in srgb, var(--lf-marfil) 55%, transparent);
+    --alto: clamp(24px, calc((100vh - 250px) / var(--n-cuadros, 17)), 38px);
+    overflow: visible; border-right: 0; padding: var(--space-3) 0 var(--space-3) 14px; z-index: 18;
+    display: flex; flex-direction: column; justify-content: center;
   }
-  .indice__titulo, .indice__pendientes { opacity: 0; transition: opacity .15s; white-space: nowrap; }
-  .indice a { grid-template-columns: 2.2rem 1fr auto; white-space: nowrap; padding-left: 0.85rem; }
-  .indice a > span:not(.indice__num) { opacity: 0; transition: opacity .15s; }
-  .indice:hover, .indice:focus-within {
-    width: 300px; overflow-y: auto;
-    box-shadow: 24px 0 48px color-mix(in srgb, black 45%, transparent);
+  .indice__titulo, .indice__pendientes { display: none; }
+  .indice ol { display: flex; flex-direction: column; filter: drop-shadow(0 10px 18px color-mix(in srgb, black 50%, transparent)); }
+  .indice li {
+    --k: 0; position: relative; flex: none;
+    width: calc(58px * (1 + var(--k) * .45)); height: calc(var(--alto) * (1 + var(--k) * .75));
+    background:
+      radial-gradient(circle, var(--perfo) 0 2.4px, transparent 2.9px) 4px 50% / 6px calc(var(--alto) / 2) repeat-y,
+      radial-gradient(circle, var(--perfo) 0 2.4px, transparent 2.9px) calc(100% - 4px) 50% / 6px calc(var(--alto) / 2) repeat-y,
+      var(--tira);
+    transform: translateX(calc(var(--k) * 16px)); /* la curva de la tira */
+    transition: width .12s ease-out, height .12s ease-out, transform .12s ease-out;
   }
-  .indice:hover .indice__titulo, .indice:focus-within .indice__titulo,
-  .indice:hover .indice__pendientes, .indice:focus-within .indice__pendientes,
-  .indice:hover a > span, .indice:focus-within a > span { opacity: 1; }
-  .indice:hover a, .indice:focus-within a { white-space: normal; }
-  /* pista visual del riel: una linea de puntos como la tira de pelicula */
-  .indice::after {
-    content: ""; position: absolute; top: var(--space-3); bottom: var(--space-3); right: 6px; width: 4px;
-    background: radial-gradient(circle, var(--color-linea) 1.5px, transparent 2px) 0 0 / 4px 12px repeat-y;
+  .indice li:first-child { border-radius: 6px 6px 0 0; }
+  .indice li:last-child { border-radius: 0 0 6px 6px; }
+  .indice a {
+    position: absolute; inset: 3px 12px; display: grid; grid-template-columns: 1fr; place-items: center; padding: 0;
+    border: 1.5px solid color-mix(in srgb, var(--lf-marfil) 22%, transparent); border-radius: 3px; border-left-width: 1.5px;
+    background: color-mix(in srgb, var(--lf-ciruela) 70%, black); color: var(--lf-marfil);
   }
-  .indice:hover::after, .indice:focus-within::after { opacity: 0; }
+  .indice a:hover, .indice a:focus-visible { background: color-mix(in srgb, var(--lf-ciruela) 85%, var(--lf-marfil)); }
+  .indice a.activo { /* el cuadro que esta pasando por el proyector */
+    background: var(--color-acento); border-color: var(--color-acento);
+    box-shadow: 0 0 12px color-mix(in srgb, var(--color-acento) 70%, transparent);
+  }
+  .indice a.activo::before { display: none; } /* sin la gota del indice normal */
+  .indice__num { font: 700 calc(0.72rem * (1 + var(--k, 0) * .55))/1 var(--font-boton); color: inherit; }
+  .indice a.activo { position: absolute; border-left-width: 1.5px; }
+  .indice a.activo .indice__num { color: var(--lf-cafe-tinta); }
+  .indice__badge { /* campos por definir: un punto en la esquina del cuadro */
+    position: absolute; top: -4px; right: -5px; min-width: 0; width: 9px; height: 9px; padding: 0;
+    font-size: 0; border: 2px solid var(--tira);
+  }
+  .indice__nombre { /* la etiqueta del dock: solo para el cuadro bajo el cursor o con foco */
+    position: absolute; left: calc(100% + 18px); top: 50%; transform: translateY(-50%);
+    white-space: nowrap; pointer-events: none;
+    padding: 0.3rem 0.7rem; border-radius: 99px; background: var(--lf-cafe-tinta);
+    border: 1px solid var(--color-linea); color: var(--lf-marfil);
+    font: 700 0.95rem var(--font-boton); opacity: 0; transition: opacity .12s;
+  }
+  .indice li:hover .indice__nombre, .indice a:focus-visible .indice__nombre { opacity: 1; }
 }
 @media (min-width: 961px) and (prefers-reduced-motion: reduce) {
-  .indice, .indice * { transition: none; }
+  .indice li { transform: none; transition: none; }
 }
 
 /* ---------- Portada: mas legible ---------- */
