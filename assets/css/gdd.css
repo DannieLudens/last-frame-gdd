@@ -25,7 +25,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .sr-only {
   position: absolute; width: 1px; height: 1px; overflow: hidden;
-  clip: rect(0 0 0 0); white-space: nowrap;
+  clip: rect(0 0 0 0); white-space: nowrap; margin: -1px; padding: 0; border: 0;
 }
 
 /* ---------- Barra superior ---------- */
@@ -203,7 +203,7 @@ main { padding: 0 clamp(1.25rem, 4vw, 4rem) var(--space-8); min-width: 0; }
 .contenido pre code { background: none; border: 0; padding: 0; }
 
 /* Tablas */
-.tabla { overflow-x: auto; margin: var(--space-3) 0; border: 1px solid var(--color-linea); border-radius: var(--radius); }
+.tabla { position: relative; overflow-x: auto; margin: var(--space-3) 0; border: 1px solid var(--color-linea); border-radius: var(--radius); }
 .contenido table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
 .contenido th {
   text-align: left; font: 700 var(--text-small) var(--font-boton); letter-spacing: .02em;
@@ -545,3 +545,24 @@ main { padding: 0 clamp(1.25rem, 4vw, 4rem) var(--space-8); min-width: 0; }
 .indice__titulo { font-size: 1rem; color: var(--color-texto); }
 .aviso__titulo { font-size: 0.85rem; }
 .tag { font-size: 0.78rem; }
+
+/* Texto oculto dentro de tablas y contenido: que no ensanche la pagina */
+.contenido { position: relative; }
+body { overflow-x: clip; }
+
+/* Boton Jugar de la portada: la mancha mostaza del menu principal */
+.portada__jugar {
+  position: relative; isolation: isolate; display: inline-block; margin-top: 1.4rem;
+  padding: 0.9rem 2rem 1.1rem; font: 700 1.15rem var(--font-boton);
+  color: var(--color-sobre-acento); text-decoration: none;
+}
+.portada__jugar::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; background: var(--color-acento);
+  -webkit-mask: url('../img/ui/mancha-c.svg') center / 100% 100% no-repeat;
+          mask: url('../img/ui/mancha-c.svg') center / 100% 100% no-repeat;
+  transition: transform .15s;
+}
+a.portada__jugar:hover::before, a.portada__jugar:focus-visible::before { transform: scale(1.06) rotate(1deg); }
+a.portada__jugar:focus-visible { outline: 2px dashed var(--lf-marfil); outline-offset: 6px; }
+.portada__jugar--pronto { color: var(--lf-marfil); cursor: default; }
+.portada__jugar--pronto::before { background: var(--lf-ciruela); }

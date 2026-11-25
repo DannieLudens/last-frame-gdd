@@ -2,9 +2,7 @@
 
 ## Elevator pitch
 
-Eres una caricatura olvidada, un boceto hecho a mano, que debe escapar de un estudio abandonado que ahora dominan animaciones generadas por IA. Usa el sigilo y tu pluma de tinta, esquiva sus borradores y recupera tus recuerdos para llegar al cohete antes de ser reemplazada.
-
-> [!nota] En el Google Doc el pitch todavía menciona "pistolas de pintura" y "cristales de tinta". Esta versión usa lo acordado después: borradores, pluma de tinta y cintas de recuerdo.
+Eres una caricatura de los años 80, olvidada tras la cancelación de su show y atrapada en un estudio abandonado que ahora dominan caricaturas generadas por IA. Escóndete en la sombra, defiéndete con tu pluma de tinta y tu corrector, y recupera en cada set la cinta con uno de tus recuerdos antes de que El Reemplazo, tu copia perfecta, te borre para siempre.
 
 ## Pilares de diseño
 
@@ -18,53 +16,71 @@ Sistema de ataque | Dos opciones: un ataque a distancia con la pluma tintera, pa
 
 ### Descripción breve
 
-[[2 a 3 párrafos: qué es el juego, quién es el jugador y qué hace.]]
+Last Frame es un juego de sigilo en 3D con cámara cenital (top-down) y estética de caricatura clásica de los años 80. La jugadora controla a una caricatura olvidada: la estrella de un show cancelado que despierta en un estudio de televisión abandonado, ahora tomado por caricaturas generadas por IA, sonrientes, perfectas e impresas en papel.
+
+La partida recorre 5 sets del estudio. El primero enseña las mecánicas, los tres del medio aparecen en orden aleatorio y el último es el enfrentamiento con El Reemplazo. En cada set la protagonista busca una cinta con uno de sus recuerdos y la puerta de salida, sin ser borrada. Se esconde en la oscuridad, evita el ruido y, cuando no hay otra opción, ataca con su pluma de tinta o con su corrector líquido.
 
 ### Descripción detallada
 
-[[4 a 6 párrafos: jugabilidad general, historia, entorno, estilo visual y sensación. Describe los primeros 2 minutos después de presionar "Jugar".]]
+Visto desde el tamaño de la protagonista, el estudio es inmenso: cajas de props, cámaras antiguas, mesas de animación y hojas de papel son paredes y escondites. Cada set es una sala de grabación distinta. El set 1 funciona como tutorial; al cruzar su puerta, el juego elige al azar el orden de los sets 2, 3 y 4, así que hay 6 recorridos posibles. El set 5 es el set de ideas potenciales, donde espera El Reemplazo.
+
+Las caricaturas de IA patrullan, oyen y vigilan. Si ven a la protagonista, la persiguen para borrarla con su borrador. Cada golpe le quita uno de sus 3 corazones y la hace sangrar tinta: durante unos 6 segundos deja un rastro de gotas que los enemigos pueden seguir, y esconderse no lo borra. Si pierde los 3 corazones, la borran y la sala se reinicia. Las cámaras del estudio barren el espacio y llaman a un enemigo con una alarma. Los reflectores exponen y la oscuridad protege.
+
+La protagonista puede caminar sin hacer ruido, correr (rápido pero ruidoso) o agacharse (lento y casi invisible). Su arma principal es una pluma estilográfica de su tamaño, que lanza gotas de tinta en arco hacia el cursor; con Q la cambia por un corrector líquido para atacar cuerpo a cuerpo. La tinta es escasa y se reinicia en cada sala. Los enemigos son de papel: la tinta los mancha y los disuelve.
+
+El contraste es el corazón visual del juego: la protagonista y el estudio tienen trazo a lápiz, colores cálidos y desparejos; los enemigos son brillantes, simétricos y genéricos. La sensación buscada es tensión silenciosa con el humor de la caricatura clásica.
+
+**Primeros dos minutos:** tras elegir Jugar, una cinta vieja muestra el último cuadro en que la protagonista salió al aire. Despierta en el set 1, a oscuras. Letreros pintados a mano le enseñan a moverse, agacharse y esconderse; una caricatura de IA pasa sonriendo con su borrador y la jugadora aprende a esperar en la sombra. Encuentra su pluma, prueba un disparo de tinta contra una lata para distraer, cambia al corrector con Q, recoge su primera cinta (un recuerdo corto) y cruza la puerta hacia el siguiente set.
 
 ## Temática, ambientación y género
 
-| Aspecto | Decisión |
-| --- | --- |
-| Género | [[Ej. plataformas 2D, puzzle, roguelite]] |
-| Temática | [[Ej. mitología colombiana, ciencia ficción]] |
-| Ambientación | [[Dónde y cuándo ocurre; mundo abierto o niveles]] |
-| Palabras de identidad | [[3 a 5 adjetivos que sí somos]] |
-| Lo que no somos | [[Adjetivos que descartamos a propósito]] |
+- **Género:** sigilo con acción ligera, 3D top-down, un jugador.
+- **Tema:** el arte hecho a mano frente a la producción automatizada; el miedo a ser olvidada y reemplazada.
+- **Ambientación:** un estudio de televisión y animación de los años 80, abandonado, visto a la escala de una caricatura pequeña. 5 sets cerrados tipo laberinto, no mundo abierto.
+- **Tono:** caricatura clásica, tensión ligera y humor visual, para todo público.
 
 ## Objetivo principal
 
-[[¿Cuál es la meta del personaje principal?]]
+Escapar del estudio sin ser borrada: atravesar los 5 sets, recuperar en cada uno la cinta con uno de sus recuerdos y vencer a El Reemplazo para volver al aire en un show renovado.
 
 ## Estética, dinámicas y mecánicas (MDA)
 
-| Estética: qué siente el jugador | Dinámica: qué pasa al jugar | Mecánica: reglas que lo producen |
-| --- | --- | --- |
-| [[Ej. tensión]] | [[Ej. huir sin mapa mientras algo persigue]] | [[Ej. barra de amenaza, visibilidad limitada]] |
-| [[Estética 2]] | [[Dinámica 2]] | [[Mecánica 2]] |
+**Estéticas (lo que debe sentir el jugador):** tensión al esconderse, alivio al pasar sin ser vista, curiosidad por los recuerdos y simpatía por una caricatura que lucha por no desaparecer.
+
+**Dinámicas:** observar patrullas desde la sombra, distraer con ruido o con un disparo de tinta, elegir entre pasar sin ser vista o atacar, administrar la poca tinta y los 3 corazones, y despistar a los enemigos cuando siguen su rastro de tinta.
+
+**Mecánicas:** movimiento con tres velocidades; detección por visión, oído y rastro; zonas de luz y oscuridad; cámaras con alarma; pluma de tinta con munición limitada; corrector cuerpo a cuerpo; cambio de arma con Q; 3 corazones; rastro de tinta de 6 segundos; una cinta por set; orden aleatorio de los sets 2 a 4; jefe final.
 
 ## Influencias
 
-Máximo un párrafo por influencia, diciendo **qué se toma** de cada una (color, forma, ritmo, mecánica, tono).
+Obras que inspiran el tono, el estilo y las mecánicas:
 
-```galeria
-assets/img/influencias/influencia-1.jpg | [[Influencia 1: qué se toma]]
-assets/img/influencias/influencia-2.jpg | [[Influencia 2: qué se toma]]
-assets/img/influencias/influencia-3.jpg | [[Influencia 3: qué se toma]]
-```
+### Cuphead
+
+- Caricatura clásica hecha a mano como gancho principal de un juego independiente.
+
+### Mark of the Ninja
+
+- Sigilo fácil de leer: luz y sombra claras, ruido visible en pantalla y la opción de avanzar sin enfrentarse a nadie.
+
+### Bendy and the Ink Machine
+
+- Estudio de animación abandonado y tinta como material del mundo. Last Frame toma el escenario, pero con sigilo para todo público en lugar de terror.
+
+### Toy Story
+
+- El miedo de un personaje a ser reemplazado por uno más nuevo y brillante, en un mundo cotidiano visto a escala gigante.
 
 ## ¿Qué lo hace diferente?
 
-- [[Razón 1: el gancho que se ve en una captura]]
-- [[Razón 2]]
-- [[Razón 3]]
+- El debate entre arte hecho a mano y contenido generado por IA se vuelve regla de juego: la protagonista se esconde de enemigos perfectos y genéricos.
+- Sigilo para todo público: no hay sangre; la tinta mancha y disuelve a los enemigos de papel, y la protagonista sangra tinta cuando la golpean.
+- Cada partida cambia: los sets 2 a 4 salen en orden aleatorio, y cada cinta cuenta un recuerdo que se entiende solo.
 
 ## Público objetivo
 
-[[¿Quién es el jugador? Edad, tipo de jugador, juegos que ya juega. El detalle va en "Audiencia, mercado y analíticas".]]
+Jugadores de 10 años en adelante que disfrutan juegos de sigilo cortos y de estilo caricatura, y adultos jóvenes interesados en la animación clásica y en la conversación sobre IA y creatividad. Partidas cortas, de 5 a 10 minutos, en PC con teclado y mouse, desde el navegador.
 
 ## Clasificación esperada
 
-[[Clasificación tipo ESRB/PEGI esperada y por qué. Ej. E10+ por violencia fantástica leve.]]
+ESRB E10+ (Everyone 10+): violencia de caricatura leve, sin sangre ni lenguaje ofensivo.

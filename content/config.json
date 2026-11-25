@@ -1,10 +1,13 @@
 {
   "titulo": "Last Frame",
-  "tipo": { "es": "Game Design Document", "en": "Game Design Document" },
+  "tipo": {
+    "es": "Game Design Document",
+    "en": "Game Design Document"
+  },
   "siglas": "GDD",
   "pitch": {
-    "es": "Eres una caricatura olvidada, un boceto hecho a mano, que debe escapar de un estudio abandonado que ahora dominan animaciones generadas por IA. Usa el sigilo y tu pluma de tinta, esquiva sus borradores y recupera tus recuerdos para llegar al cohete antes de ser reemplazada.",
-    "en": "You are a forgotten cartoon, a hand-drawn sketch, escaping an abandoned studio now ruled by AI-generated animations. Use stealth and your ink pen, dodge their erasers and recover your memories to reach the rocket before you are replaced."
+    "es": "Eres una caricatura de los años 80, olvidada tras la cancelación de su show y atrapada en un estudio abandonado que ahora dominan caricaturas generadas por IA. Escóndete en la sombra, defiéndete con tu pluma de tinta y tu corrector, y recupera en cada set la cinta con uno de tus recuerdos antes de que El Reemplazo, tu copia perfecta, te borre para siempre.",
+    "en": "You are a forgotten 1980s cartoon, left behind when your show was cancelled and trapped in an abandoned studio now ruled by AI-generated cartoons. Hide in the shadows, fight back with your ink pen and your correction fluid, and recover in every set the tape that holds one of your memories before The Replacement, your perfect copy, erases you for good."
   },
   "estudio": "The Strokes",
   "version": "0.1",
@@ -18,30 +21,131 @@
   ],
   "logo": "",
   "idiomaBase": "es",
-  "idiomas": ["es", "en"],
-  "pdf": { "es": "", "en": "" },
+  "idiomas": [
+    "es",
+    "en"
+  ],
+  "pdf": {
+    "es": "",
+    "en": ""
+  },
+  "itch": "",
   "secciones": [
-    { "id": "resumen", "archivo": "00-resumen.md" },
-    { "id": "jugabilidad", "archivo": "01-jugabilidad.md" },
-    { "id": "historia", "archivo": "02-historia.md" },
-    { "id": "personajes", "archivo": "03-personajes.md" },
-    { "id": "niveles", "archivo": "04-niveles.md" },
-    { "id": "comunicacion", "archivo": "05-comunicacion.md" },
-    { "id": "cinematicas", "archivo": "06-cinematicas.md" },
-    { "id": "tecnico", "archivo": "07-tecnico.md" },
-    { "id": "desarrollo", "archivo": "08-desarrollo.md" },
-    { "id": "arte", "archivo": "09-arte.md" },
-    { "id": "progresion", "archivo": "extras/progresion.md", "etiqueta": { "es": "Opcional", "en": "Optional" } },
-    { "id": "audio", "archivo": "10-audio.md" },
-    { "id": "ia", "archivo": "extras/ia.md", "etiqueta": { "es": "Opcional", "en": "Optional" } },
-    { "id": "audiencia", "archivo": "extras/audiencia.md", "etiqueta": { "es": "Opcional", "en": "Optional" } },
-    { "id": "monetizacion", "archivo": "11-monetizacion.md" },
-    { "id": "publicidad", "archivo": "extras/publicidad.md", "etiqueta": { "es": "Opcional", "en": "Optional" } },
-    { "id": "alcance", "archivo": "12-alcance.md" },
-    { "id": "cronograma", "archivo": "13-cronograma.md" },
-    { "id": "pruebas", "archivo": "extras/pruebas.md", "etiqueta": { "es": "Opcional", "en": "Optional" } },
-    { "id": "mejoras", "archivo": "extras/mejoras.md", "etiqueta": { "es": "Opcional", "en": "Optional" } },
-    { "id": "wishlist", "archivo": "extras/wishlist.md", "etiqueta": { "es": "Opcional", "en": "Optional" } },
-    { "id": "versiones", "archivo": "14-versiones.md" }
+    {
+      "id": "resumen",
+      "archivo": "00-resumen.md"
+    },
+    {
+      "id": "jugabilidad",
+      "archivo": "01-jugabilidad.md"
+    },
+    {
+      "id": "historia",
+      "archivo": "02-historia.md"
+    },
+    {
+      "id": "personajes",
+      "archivo": "03-personajes.md"
+    },
+    {
+      "id": "niveles",
+      "archivo": "04-niveles.md"
+    },
+    {
+      "id": "comunicacion",
+      "archivo": "05-comunicacion.md"
+    },
+    {
+      "id": "cinematicas",
+      "archivo": "06-cinematicas.md"
+    },
+    {
+      "id": "tecnico",
+      "archivo": "07-tecnico.md"
+    },
+    {
+      "id": "desarrollo",
+      "archivo": "08-desarrollo.md"
+    },
+    {
+      "id": "arte",
+      "archivo": "09-arte.md"
+    },
+    {
+      "id": "progresion",
+      "archivo": "extras/progresion.md",
+      "etiqueta": {
+        "es": "Opcional",
+        "en": "Optional"
+      }
+    },
+    {
+      "id": "audio",
+      "archivo": "10-audio.md"
+    },
+    {
+      "id": "ia",
+      "archivo": "extras/ia.md",
+      "etiqueta": {
+        "es": "Opcional",
+        "en": "Optional"
+      }
+    },
+    {
+      "id": "audiencia",
+      "archivo": "extras/audiencia.md",
+      "etiqueta": {
+        "es": "Opcional",
+        "en": "Optional"
+      }
+    },
+    {
+      "id": "monetizacion",
+      "archivo": "11-monetizacion.md"
+    },
+    {
+      "id": "publicidad",
+      "archivo": "extras/publicidad.md",
+      "etiqueta": {
+        "es": "Opcional",
+        "en": "Optional"
+      }
+    },
+    {
+      "id": "alcance",
+      "archivo": "12-alcance.md"
+    },
+    {
+      "id": "cronograma",
+      "archivo": "13-cronograma.md"
+    },
+    {
+      "id": "pruebas",
+      "archivo": "extras/pruebas.md",
+      "etiqueta": {
+        "es": "Opcional",
+        "en": "Optional"
+      }
+    },
+    {
+      "id": "mejoras",
+      "archivo": "extras/mejoras.md",
+      "etiqueta": {
+        "es": "Opcional",
+        "en": "Optional"
+      }
+    },
+    {
+      "id": "wishlist",
+      "archivo": "extras/wishlist.md",
+      "etiqueta": {
+        "es": "Opcional",
+        "en": "Optional"
+      }
+    },
+    {
+      "id": "versiones",
+      "archivo": "14-versiones.md"
+    }
   ]
 }

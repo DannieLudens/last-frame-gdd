@@ -24,6 +24,8 @@
       version: 'Versión',
       fecha: 'Fecha',
       estudio: 'Estudio',
+      jugar: 'Jugar en itch.io',
+      pronto: 'Próximamente en itch.io',
       equipo: 'Equipo',
       antes: 'Antes',
       despues: 'Después',
@@ -53,6 +55,8 @@
       version: 'Version',
       fecha: 'Date',
       estudio: 'Studio',
+      jugar: 'Play on itch.io',
+      pronto: 'Coming soon to itch.io',
       equipo: 'Team',
       antes: 'Before',
       despues: 'After',
@@ -289,6 +293,14 @@
     });
   }
 
+  // "Play on itch.io" blot under the cover; shows "coming soon" until config.itch has a URL
+  function playButton(c, ui) {
+    if (c.itch === undefined) return '';
+    return c.itch
+      ? `<a class="portada__jugar no-imprimir" href="${esc(c.itch)}" target="_blank" rel="noopener">${esc(ui.jugar)}</a>`
+      : `<span class="portada__jugar portada__jugar--pronto no-imprimir" aria-disabled="true">${esc(ui.pronto)}</span>`;
+  }
+
   // Draws the cover from config.json
   function renderCover() {
     const c = state.config;
@@ -303,7 +315,8 @@
       `<ul class="portada__meta">` +
       `<li>${esc(ui.estudio)}: <strong>${esc(c.estudio)}</strong></li>` +
       `<li>${esc(ui.equipo)}: <strong>${esc((c.equipo || []).join(', '))}</strong></li>` +
-      `<li>${esc(ui.fecha)}: <strong>${esc(c.fecha)}</strong></li></ul>`;
+      `<li>${esc(ui.fecha)}: <strong>${esc(c.fecha)}</strong></li></ul>` +
+      playButton(c, ui);
     const keyArt = getComputedStyle(document.documentElement).getPropertyValue('--portada-imagen').trim();
     if (!keyArt || keyArt === 'none') {
       $('#portada').insertAdjacentHTML('beforeend', `<p class="portada__pendiente no-imprimir">${esc(ui.keyArt)}</p>`); // reminder for the team
