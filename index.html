@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GDD</title>
+  <meta name="description" content="Game Design Document">
+  <meta name="generator" content="Plantilla GDD web">
+  <link rel="stylesheet" href="assets/css/tokens.css" id="tema">
+  <link rel="stylesheet" href="assets/css/gdd.css">
+  <link rel="stylesheet" href="assets/css/print.css">
+</head>
+<body>
+  <a class="sr-only" href="#contenido">Saltar al contenido</a>
+
+  <header class="barra">
+    <button class="boton barra__menu" id="btn-menu" aria-expanded="false" aria-controls="indice">☰</button>
+    <a class="barra__marca" id="marca" href="#top">GDD</a>
+    <div class="descargas" id="descargas">
+      <button class="boton boton--acento" id="btn-descargar" aria-expanded="false" aria-haspopup="true">Descargar</button>
+      <div class="descargas__lista" id="lista-descargas"></div>
+    </div>
+    <div class="idiomas" id="idiomas" role="group" aria-label="Idioma"></div>
+  </header>
+
+  <div id="top"></div>
+  <section class="portada" id="portada"></section>
+  <nav class="toc-print solo-impresion" id="toc-print"></nav>
+
+  <div class="layout">
+    <nav class="indice" id="indice" aria-label="Índice"></nav>
+    <main id="contenido">
+      <p class="estado" id="estado">Cargando el GDD…</p>
+    </main>
+  </div>
+
+  <script src="assets/js/vendor/marked.umd.js"></script>
+  <script src="assets/js/gdd.js"></script>
+</body>
+</html>

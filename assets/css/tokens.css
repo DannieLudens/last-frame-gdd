@@ -1,0 +1,92 @@
+/* =====================================================================
+   IDENTIDAD DE LAST FRAME (The Strokes)
+   Este es el UNICO archivo que cambia el look del documento.
+   Paleta: "Paleta Opcion Protagonista B" del equipo.
+   Fuentes: Caprasimo (titulo) y DynaPuff (botones y titulos de seccion),
+   como en la tabla de UI del juego. El texto largo usa Atkinson
+   Hyperlegible para que se lea comodo.
+   Las fuentes estan dentro del repo (assets/fonts, licencia OFL), asi que
+   la pagina no depende de Google Fonts.
+   ===================================================================== */
+
+@font-face { font-family: 'Caprasimo'; font-weight: 400; font-display: swap;
+  src: url('../fonts/caprasimo-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'DynaPuff'; font-weight: 400; font-display: swap;
+  src: url('../fonts/dynapuff-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'DynaPuff'; font-weight: 700; font-display: swap;
+  src: url('../fonts/dynapuff-latin-700-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Atkinson Hyperlegible'; font-weight: 400; font-display: swap;
+  src: url('../fonts/atkinson-hyperlegible-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Atkinson Hyperlegible'; font-weight: 400; font-style: italic; font-display: swap;
+  src: url('../fonts/atkinson-hyperlegible-latin-400-italic.woff2') format('woff2'); }
+@font-face { font-family: 'Atkinson Hyperlegible'; font-weight: 700; font-display: swap;
+  src: url('../fonts/atkinson-hyperlegible-latin-700-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Atkinson Hyperlegible'; font-weight: 700; font-style: italic; font-display: swap;
+  src: url('../fonts/atkinson-hyperlegible-latin-700-italic.woff2') format('woff2'); }
+
+:root {
+  /* --- Paleta del equipo (nombre: uso en el juego) --- */
+  --lf-azul-pizarra: #687589;    /* chaqueta de la protagonista */
+  --lf-ladrillo: #A65F45;        /* pantalon de la protagonista */
+  --lf-nogal: #65483D;           /* piso, mesas de dibujo y cajas */
+  --lf-ciruela: #302A38;         /* sombras, zonas de sigilo */
+  --lf-verde-humo: #66736A;      /* decorados pintados del fondo */
+  --lf-cafe-tinta: #251E23;      /* fondo del menu, placas del HUD */
+  --lf-marfil: #F1DFC0;          /* titulo, contadores */
+  --lf-mostaza: #D5A34F;         /* boton Jugar, seleccion activa */
+  --lf-laton: #E2BD73;           /* carretes coleccionables */
+  --lf-ambar: #D99C52;           /* cono de vigilancia */
+  --lf-rojo: #D26361;            /* camara que detecta */
+  --lf-berenjena: #59405C;       /* tinta de la pluma, municion */
+
+  /* --- Roles que usa el sitio (salen de la paleta) --- */
+  --color-dominante: var(--lf-cafe-tinta);
+  --color-secundario: #2B2330;                  /* entre cafe tinta y ciruela */
+  --color-acento: var(--lf-mostaza);
+  --color-peligro: var(--lf-rojo);
+  --color-interactuable: var(--lf-laton);
+  --color-panel: var(--lf-ciruela);
+  --color-texto: var(--lf-marfil);
+  --color-texto-2: #B8A88F;                     /* marfil apagado */
+  --color-linea: #4A3D45;
+  --color-sobre-acento: var(--lf-cafe-tinta);
+
+  /* Mancha de tinta (titulos y botones, como el menu del juego) */
+  --mancha-oscura: #1A1418;                     /* cafe tinta mas profundo */
+  --mancha-borde: color-mix(in srgb, var(--lf-marfil) 14%, transparent);
+  --marquesina-foco: #FFE2A1;                   /* bombillos encendidos */
+  --marquesina-aro: var(--lf-nogal);
+
+  /* --- Tipografia --- */
+  --font-display: 'Caprasimo', Georgia, serif;          /* titulo del juego */
+  --font-boton: 'DynaPuff', 'Comic Sans MS', system-ui, sans-serif; /* botones y titulos */
+  --font-body: 'Atkinson Hyperlegible', system-ui, sans-serif;     /* texto largo */
+  --font-mono: ui-monospace, 'Cascadia Code', Consolas, monospace;
+
+  /* --- Escala tipografica --- */
+  --text-display: clamp(2.6rem, 7vw, 5.4rem);
+  --text-h1: clamp(1.6rem, 3vw, 2.3rem);
+  --text-h2: 1.4rem;
+  --text-h3: 1.12rem;
+  --text-body: 1.0625rem;
+  --text-small: 0.875rem;
+
+  /* --- Espaciado (multiplos de 8) y forma --- */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-6: 3rem;
+  --space-8: 4rem;
+  --radius: 14px;
+
+  /* --- Portada: key art del juego (deja none mientras no exista) --- */
+  --portada-imagen: none;          /* ej. url('../img/key-art.jpg') */
+
+  /* --- PDF: paginas claras con la identidad del juego --- */
+  --pdf-fondo: #F7EEDC;            /* marfil claro */
+  --pdf-texto: #251E23;
+  --pdf-texto-2: #5E4E4A;
+  --pdf-linea: #E2D2B4;
+  --pdf-acento-texto: #8A5A1E;     /* mostaza oscurecida para leer sobre papel */
+}
